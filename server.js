@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 require('dotenv').config();
 const bodyParser = require('body-parser');
+const path =  require('path')
 const port = process.env.PORT || 8080;
 
 const { Pool } = require('pg');
@@ -55,6 +56,10 @@ app.post('/backend/register',(req,res)=>{
     res.json(req.body);
 })
 
+
+app.get('*', (req,res) =>{
+    res.sendFile((__dirname + '/build/index.html'));
+});
 
 
 app.listen(port ,()=>{
