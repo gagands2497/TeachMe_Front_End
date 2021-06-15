@@ -4,6 +4,14 @@ require('dotenv').config();
 
 const port = process.env.PORT || 8080;
 
+const { Pool } = require('pg');
+const pool = new Pool({
+  connectionString: process.env.DATABASE_URL,
+  ssl: {
+    rejectUnauthorized: false
+  }
+});
+
 //----------------------------------------CORS HANDELING USING HEADERS--------------------------
 
 app.use((req, res, next) => {
@@ -24,10 +32,19 @@ app.use((req, res, next) => {
 app.use(express.static('build'))
 
 
-app.get('/backend',(req,res)=>{
-    res.json({
-        name:"Gagandeep Singh"
-    })
+app.get('/backend',async (req,res)=>{
+    try {
+      const client = await pool.connect();
+      const result = await client.query('SELECT * FROM test');
+      const results = { 'results': (result) ? result.rows : null};
+      res.json(results);
+      client.release();
+    } catch (err) {
+      console.error(err);
+      res.json( {
+          Error:err.message
+      });
+    }
 })
 
 
