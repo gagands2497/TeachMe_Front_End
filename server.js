@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 require('dotenv').config();
-
+const bodyParser = require('body-parser');
 const port = process.env.PORT || 8080;
 
 const { Pool } = require('pg');
@@ -13,6 +13,8 @@ const pool = new Pool({
 });
 
 //----------------------------------------CORS HANDELING USING HEADERS--------------------------
+// app.all(bodyParser.urlencoded({extended:false}));
+// app.all();
 
 app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*')
@@ -29,7 +31,8 @@ app.use((req, res, next) => {
 })
 
 //----------------------------------------------------------------------------------------------
-app.use(express.static('build'))
+app.use(express.static('build'));
+app.use(express.json());
 
 
 app.get('/backend',async (req,res)=>{
@@ -45,6 +48,11 @@ app.get('/backend',async (req,res)=>{
           Error:err.message
       });
     }
+})
+
+app.post('/backend/register',(req,res)=>{
+    console.log(req.body);
+    res.json(req.body);
 })
 
 

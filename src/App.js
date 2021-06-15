@@ -4,7 +4,8 @@ import { useEffect, useState } from 'react';
 // ----------------import components------------
 
 import Home from './Routes/Home';
-
+import Register from './Routes/Register';
+import Login from './Routes/Login';
 // ---------------------------------------------
 
 const port = process.env.PORT || 8080;
@@ -31,6 +32,12 @@ const App = () => {
             <Switch>
                 <Route path = '/' exact>
                     <Home></Home>
+                </Route>
+                <Route path = '/register'>
+                    <Register></Register>
+                </Route>
+                <Route path = '/login'>
+                    <Login></Login>
                 </Route>
             </Switch>
         </Router>
