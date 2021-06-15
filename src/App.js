@@ -13,7 +13,7 @@ const App = () => {
     const [name, setname] = useState("");
     
     useEffect(()=>{
-        let url = "http://localhost:" + port;
+        let url = "/backend";
         fetch(url)
                 .then((response)=>{
                     return response.json();

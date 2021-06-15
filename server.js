@@ -21,13 +21,15 @@ app.use((req, res, next) => {
 })
 
 //----------------------------------------------------------------------------------------------
+app.use(express.static('build'))
 
 
-app.get('/',(req,res)=>{
+app.get('/backend',(req,res)=>{
     res.json({
-        name:"GAGANDEEP SINGH"
+        name:"Gagandeep Singh"
     })
 })
+
 
 
 app.listen(port ,()=>{
