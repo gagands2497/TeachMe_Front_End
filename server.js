@@ -4,14 +4,10 @@ require('dotenv').config();
 const bodyParser = require('body-parser');
 const path =  require('path')
 const port = process.env.PORT || 8080;
+const registerRoute = require('./serverRoutes/registerRoute')
+const loginRoute = require('./serverRoutes/loginRoute')
+const logoutRoute = require('./serverRoutes/logoutRoute')
 
-const { Pool } = require('pg');
-const pool = new Pool({
-  connectionString: process.env.DATABASE_URL,
-  ssl: {
-    rejectUnauthorized: false
-  }
-});
 
 //----------------------------------------CORS HANDELING USING HEADERS--------------------------
 // app.all(bodyParser.urlencoded({extended:false}));
@@ -35,27 +31,13 @@ app.use((req, res, next) => {
 app.use(express.static('build'));
 app.use(express.json());
 
+// ------Routes--------
 
-app.get('/backend',async (req,res)=>{
-    try {
-      const client = await pool.connect();
-      const result = await client.query('SELECT * FROM test');
-      const results = { 'results': (result) ? result.rows : null};
-      res.json(results);
-      client.release();
-    } catch (err) {
-      console.error(err);
-      res.json( {
-          Error:err.message
-      });
-    }
-})
+app.use('/api/register',registerRoute);
+app.use('/api/login',loginRoute);
+app.use('/api/logout',logoutRoute);
 
-app.post('/backend/register',(req,res)=>{
-    console.log(req.body);
-    res.json(req.body);
-})
-
+// -------------------
 
 app.get('*', (req,res) =>{
     res.sendFile((__dirname + '/build/index.html'));
