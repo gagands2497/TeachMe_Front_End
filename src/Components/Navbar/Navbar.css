@@ -5,7 +5,7 @@
     background-color: #5CD895;
     /* position: fixed; */
 }
-#navbar span{
+#logo{
     line-height: 10vh;
     margin: 2vh;
     font-size: 1.5em;
@@ -16,9 +16,12 @@
     font-weight: 600;
     letter-spacing: 1.5px;
     transition: 0.5s;
+    font-weight: 900;
     cursor: pointer;
 }
 
+
 #navbar span:hover{
+    background-color: #05386B;
     color: #EDF5E1;
 }

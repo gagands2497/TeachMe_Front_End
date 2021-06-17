@@ -43,4 +43,35 @@ a{
 #home-btns{
   display: flex;
   justify-content:center ;
+  padding-bottom: 10vh;
+}
+
+#logoImage{
+  display: flex;
+  justify-content: center;
+  
+}
+
+#logoImage img{
+  border-radius: 100%;
+  z-index: 55;
+  animation: rotate 5s infinite ease-in-out;
+  cursor: pointer;
+  
+}
+
+#warning
+{
+  text-align: center;
+  font-family: sans-serif;
+  color: rgb(255, 217, 0);
+}
+
+@keyframes rotate{
+  0%{
+    transform: rotateZ(0deg);
+  }
+  100%{
+    transform: rotateZ(360deg);
+  }
 }

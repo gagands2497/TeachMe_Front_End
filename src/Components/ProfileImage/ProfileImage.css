@@ -18,7 +18,7 @@
   border-radius: 0.5em;
   border-top-right-radius: 0;
   position: absolute;
-  background-color: #379683;
+  background-color: #05386B;
   top: 8vh;
   right: 5vw;
   display: none;
@@ -41,7 +41,7 @@
   /* background-color: aliceblue; */
 }
 #menu h3:hover{
-    color: #05386B;
+    color: #5CD895;
 }
 
 

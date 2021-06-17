@@ -22,7 +22,7 @@ const ProfileImage = () => {
             Token : sessionStorage.getItem("Token"),
         }
 
-        let url = 'http://localhost:8080/api/logout'
+        let url = '/api/logout'
 
         let options = {
             method:"POST",
@@ -59,6 +59,8 @@ const ProfileImage = () => {
         }else{
             return (
                 <React.Fragment>
+                    <a href="/about"><h3>About Us</h3></a>
+                    <a href="/contact"><h3>Contact Us</h3></a>
                     <a href="/register"><h3>Register</h3></a>
                     <a href="/login"><h3>Login</h3></a>
                 </React.Fragment>
@@ -80,7 +82,9 @@ const ProfileImage = () => {
         <div id="profileImage" >
             {renderProfileImage()}
             <div id="menu">
+                
                 {renderItems()}
+                
             </div>
         </div>
     );

@@ -5,9 +5,7 @@ const Navbar = () => {
 
     return (
         <div id="navbar">
-            <a href="/"><span>Home</span></a>
-            <span>About us</span>
-            <span>Contact us</span>
+            <a href="/"><span id = "logo">TEACH ME</span></a>
             <ProfileImage></ProfileImage>
         </div>
     );

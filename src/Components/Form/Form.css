@@ -1,11 +1,18 @@
+#form{
+  display: flex;
+  justify-content: center;
+  background-color: #5CD895;
+}
+
 .form {
   /* min-height: 60vh; */
-  /* width: 30vw; */
-  top: 20vh;
-  left: 5vw;
+  width: 30vw;
+  margin: 4em;
+  /* top: 20vh; */
+  /* left: 5vw; */
   border-radius: 0.5em;
   background-color: #05386B;
-  position: absolute;
+  /* position: absolute; */
   /* filter: blur(20px); */
   z-index: 5;
   box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);

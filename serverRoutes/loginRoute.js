@@ -8,9 +8,7 @@ const pool = new Pool({
 })
 
 router.post('/',async(req,res)=>{
-    // hash  = crypto.createHmac("sha256",process.env.REACT_APP_KEY)
-    // const TOKEN =  hash.update(time + req.body.Username).digest("hex");
-
+    req.body.Password = (req.body.Password).trim();
     if(req.body.Token)
     {
 
@@ -25,7 +23,12 @@ router.post('/',async(req,res)=>{
             );
 
             const user = sessionData.rows[0];
-            if(user.token_id === req.body.Token){
+            if(!user){
+                res.status(500).json({
+                    Error : "Please Register first"
+                })
+            }
+            else if(user.token_id === req.body.Token){
 
                 let time1 = parseInt(user.start_time);
                 let d = new Date();
@@ -38,19 +41,19 @@ router.post('/',async(req,res)=>{
                         message : "Logged in successfully"
                     })
                 }else{
-                    res.json({
+                    
+                    res.status(500).json({
+
                         message : "Session Expired"
                     })
                 }
             }else{
-                res.json({
+                res.status(500).json({
                     Error : "Invalid Credentials"
                 })
             }
-
-            res.json()
         }catch(err){
-            res.json({
+            res.status(500).json({
                 Error : err.message
             })
         }
@@ -72,12 +75,11 @@ router.post('/',async(req,res)=>{
             
             let user = result.rows[0];
             if(!user){
-                res.json({
+                res.status(500).json({
                     Error : "Please Register first"
                 })
             }
             else if(user.password === password){
-
                 let d = new Date();
                 let hash2 = crypto.createHmac("sha256",process.env.REACT_APP_KEY);
                 let time = d.getTime().toString();
@@ -93,19 +95,19 @@ router.post('/',async(req,res)=>{
                     message : "Logged in Successfully"
                 })
             }else{
-                res.json({
+                res.status(500).json({
                     Error : "Invalid Credentials"
                 })
             }
 
         }catch(err){
-            res.json({
+            res.status(500).json({
                 Error : err.message
             })
         }
 
     }else{
-        res.json({
+        res.status(500).json({
             Error : " Credentials cannot be empty "
         })
     }
