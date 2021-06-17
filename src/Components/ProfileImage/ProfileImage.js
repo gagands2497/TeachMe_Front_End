@@ -14,17 +14,53 @@ const ProfileImage = () => {
             menu.style.display = "none";
         }
     }
+
+    const logout = ()=>{
+
+        let data = {
+            Email_Id :sessionStorage.getItem("Email_Id"),
+            Token : sessionStorage.getItem("Token"),
+        }
+
+        let url = '/api/logout'
+
+        let options = {
+            method:"POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body : JSON.stringify(data)
+        }
+
+        fetch(url,options).then(response => {
+            return response.json()
+        }).then(data => {
+            sessionStorage.clear();
+            console.log(data);
+            window.location.href = '/'
+        }).catch(err =>{
+            console.log(err.message);
+        })
+
+    }
     const renderItems  = ()=>{
         if(sessionStorage.Token)
         {
             return (
                 <React.Fragment>
-                    <h3>UPDATE THIS PART</h3>
+                    {/* <h3>UPDATE THIS PART</h3> */}
+                    <a href="/profile"><h3>Profile</h3></a>
+                    <a href="/explore"><h3>Explore</h3></a>
+                    <a href="/chats"><h3>Chats</h3></a>
+                    <a href="/history"><h3>History</h3></a>
+                    <h3 onClick = {logout}>Logout</h3>
                 </React.Fragment>    
             )
         }else{
             return (
                 <React.Fragment>
+                    <a href="/about"><h3>About Us</h3></a>
+                    <a href="/contact"><h3>Contact Us</h3></a>
                     <a href="/register"><h3>Register</h3></a>
                     <a href="/login"><h3>Login</h3></a>
                 </React.Fragment>
@@ -34,10 +70,11 @@ const ProfileImage = () => {
     const renderProfileImage = ()=>{
         if(sessionStorage.Token)
         {
-            return <img onClick = {toggleMenu} src="" alt="profile Image" />
+            //change it pick from database
+            return <img onClick = {toggleMenu} src={DefaultUserImage} alt="profile " />
         }
         else{
-            return <img onClick = {toggleMenu} src={DefaultUserImage} alt="Default User Image" />
+            return <img onClick = {toggleMenu} src={DefaultUserImage} alt="Default User " />
         }
     }
     
@@ -45,7 +82,9 @@ const ProfileImage = () => {
         <div id="profileImage" >
             {renderProfileImage()}
             <div id="menu">
+                
                 {renderItems()}
+                
             </div>
         </div>
     );

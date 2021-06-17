@@ -4,14 +4,74 @@
   /* overflow-y: hidden; */
 }
 
-img {
+/* img {
   background-size: cover;
   height: 100vh;
+   filter: blur(20px); 
   width: 100vw;
   opacity: 0.8;
-}
+} */
 
 a{
     text-decoration: none;
     color: black;
+}
+
+/* HOME .JS */
+#welcome{
+  background-color: #5CDB95;
+}
+#welcome h1{
+  text-align: center;
+  font-family: sans-serif;
+  color: #EDF5E1;
+  font-size: 4em;
+  padding: 1em 1em 0 1em ;
+  letter-spacing: 4px;
+  font-weight: 900;
+}
+
+#welcome h2{
+  text-align: center;
+  padding: 1em;
+  letter-spacing: 4px;
+  font-family: sans-serif;
+  font-weight: 900;
+  color: #EDF5E1;
+}
+
+#home-btns{
+  display: flex;
+  justify-content:center ;
+  padding-bottom: 10vh;
+}
+
+#logoImage{
+  display: flex;
+  justify-content: center;
+  
+}
+
+#logoImage img{
+  border-radius: 100%;
+  z-index: 55;
+  animation: rotate 5s infinite ease-in-out;
+  cursor: pointer;
+  
+}
+
+#warning
+{
+  text-align: center;
+  font-family: sans-serif;
+  color: rgb(255, 217, 0);
+}
+
+@keyframes rotate{
+  0%{
+    transform: rotateZ(0deg);
+  }
+  100%{
+    transform: rotateZ(360deg);
+  }
 }

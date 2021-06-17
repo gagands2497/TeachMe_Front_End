@@ -1,0 +1,40 @@
+#footer{
+    background-color: #05386B;
+}
+
+#footer h2{
+    text-align: center;
+    color: aliceblue;
+    letter-spacing: 2px;
+    font-family: sans-serif;
+    padding: 1em;
+}
+
+#turn-on-updates{
+    display: flex;
+    justify-content: center;
+    /* padding: 2em; */
+}
+
+#turn-on-updates input{
+    margin: 3vh;
+    font-size: 1.5em;
+    padding: 0.5em;
+    border-radius: 0.5em;
+    font-family: sans-serif;
+    letter-spacing: 2px;
+    border: none;
+    outline: none;
+}
+
+#social-media{
+    display: flex;
+    justify-content: center;
+    padding: 0 4vh 4vh 4vh;
+}
+
+#social-media img{
+    height: 8vh;
+    margin: 2em;
+    cursor: pointer;
+}

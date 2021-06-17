@@ -3,9 +3,10 @@ import './Button.css';
 const Button = (props) => {
 
     const styles = {
-        backGroundColor : props.bgColor,
+        backgroundColor : props.bgColor,
         fontSize : props.FS,
         color:props.color,
+        borderWidth : props.borderWidth,
         borderColor : props.color
     }
 
