@@ -4,6 +4,8 @@ require('dotenv').config();
 const bodyParser = require('body-parser');
 const path =  require('path')
 const port = process.env.PORT || 8080;
+const https = require('https');
+const fs = require('fs');
 const registerRoute = require('./serverRoutes/registerRoute')
 const loginRoute = require('./serverRoutes/loginRoute')
 const logoutRoute = require('./serverRoutes/logoutRoute')
@@ -43,7 +45,12 @@ app.get('*', (req,res) =>{
     res.sendFile((__dirname + '/build/index.html'));
 });
 
+const server = https.createServer({
+    key: fs.readFileSync(path.join(__dirname,'cert','key.pem')),
+    cert:fs.readFileSync(path.join(__dirname,'cert','cert.pem'))
+},app);
 
-app.listen(port ,()=>{
-    console.log("server is running on port number " + port);
+
+server.listen(port,()=>{
+    console.log(`server is listening on port ` + port);
 })
