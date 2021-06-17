@@ -1,0 +1,46 @@
+* {
+  padding: 0;
+  margin: 0;
+  /* overflow-y: hidden; */
+}
+
+/* img {
+  background-size: cover;
+  height: 100vh;
+   filter: blur(20px); 
+  width: 100vw;
+  opacity: 0.8;
+} */
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+/* HOME .JS */
+#welcome{
+  background-color: #5CDB95;
+}
+#welcome h1{
+  text-align: center;
+  font-family: sans-serif;
+  color: #EDF5E1;
+  font-size: 4em;
+  padding: 1em 1em 0 1em ;
+  letter-spacing: 4px;
+  font-weight: 900;
+}
+
+#welcome h2{
+  text-align: center;
+  padding: 1em;
+  letter-spacing: 4px;
+  font-family: sans-serif;
+  font-weight: 900;
+  color: #EDF5E1;
+}
+
+#home-btns{
+  display: flex;
+  justify-content:center ;
+}

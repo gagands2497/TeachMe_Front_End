@@ -1,0 +1,24 @@
+#navbar{
+    height: 10vh;
+    width: 100vw;
+    z-index: 5;
+    background-color: #5CD895;
+    /* position: fixed; */
+}
+#navbar span{
+    line-height: 10vh;
+    margin: 2vh;
+    font-size: 1.5em;
+    padding:2vh;
+    color: #05386B;
+    border-radius: 0.5em;
+    font-family: sans-serif;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+#navbar span:hover{
+    color: #EDF5E1;
+}

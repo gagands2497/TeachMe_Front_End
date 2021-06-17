@@ -1,0 +1,57 @@
+#profileImage img {
+  height: 8vh;
+  width: 8vh;
+  
+}
+#profileImage {
+  float: right;
+  margin-top: 1vh;
+  margin-right: 2vw;
+  cursor: pointer;
+  padding: 0;
+}
+
+#menu {
+  background-color: rgb(240, 248, 255);
+  padding: 2em 0;
+  width: 15vw;
+  border-radius: 0.5em;
+  border-top-right-radius: 0;
+  position: absolute;
+  background-color: #379683;
+  top: 8vh;
+  right: 5vw;
+  display: none;
+  animation: appear 0.5s 1;
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+-webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+
+}
+#menu h3 {
+  padding: 0.5em 1em;
+  margin: 0.5em ;
+  text-align: center;
+  font-family: sans-serif;
+
+  letter-spacing: 1.5px;
+  color: #EDF5E1;
+  font-size: 1em;
+  transition: 0.5s;
+  /* background-color: aliceblue; */
+}
+#menu h3:hover{
+    color: #05386B;
+}
+
+
+@keyframes appear {
+  0% {
+    top: 5vh;
+    opacity: 0;
+  }
+  100% {
+    top: 8vh;
+    opacity: 1;
+  }
+}
