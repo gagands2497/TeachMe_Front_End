@@ -28,7 +28,7 @@ const Login = () => {
                 },
                 body : JSON.stringify(data)
             }
-            let url = '/api/login'
+            let url = 'http://localhost:8080/api/login'
             fetch(url,options).then((response)=>{
                 setisLoading(false);
                 setstatus(response.status);

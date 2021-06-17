@@ -32,7 +32,7 @@ const Register = () => {
                 },
                 body : JSON.stringify(data)
             }
-            let url = '/api/register';
+            let url = 'http://localhost:8080/api/register';
             fetch(url,options).then((response)=>{
                 setisLoading(false);
                 setstatus(response.status);

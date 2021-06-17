@@ -22,7 +22,7 @@ const ProfileImage = () => {
             Token : sessionStorage.getItem("Token"),
         }
 
-        let url = '/api/logout'
+        let url = 'http://localhost:8080/api/logout'
 
         let options = {
             method:"POST",
