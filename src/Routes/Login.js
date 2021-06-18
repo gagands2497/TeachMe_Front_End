@@ -9,7 +9,8 @@ const Login = () => {
     const [Password, setPassword] = useState("");
     const [isLoading, setisLoading] = useState(false);
     const [error, seterror] = useState("");
-    const [status, setstatus] = useState()
+
+
     const handler = ()=>{
         seterror("");
         let data = {
@@ -17,6 +18,8 @@ const Login = () => {
             Password:Password,
             Token : sessionStorage.getItem("Token")
         }
+
+
         if(Email && Password.length >= 6)
         {
             setisLoading(true);
@@ -28,20 +31,24 @@ const Login = () => {
                 },
                 body : JSON.stringify(data)
             }
+
             let url = 'http://localhost:8080/api/login'
-            fetch(url,options).then((response)=>{
+            fetch(url,options).then(async (response)=>{
                 setisLoading(false);
-                setstatus(response.status);
-                return response.json();
                 
-            }).then((data)=>{
-                if(status === 200){
+                console.log("Status "+response.status);
+                const data=await response.json();
+
+                if(response.status === 200){
                     sessionStorage.setItem("Token" , data.Token)
                     window.location.href = '/profile'
                 }else{
                     console.log(data);
                     throw new Error(data.Error);
                 }
+
+                // return response.json();
+                
             })
             .catch(err =>{
                 setisLoading(false);
