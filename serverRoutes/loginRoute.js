@@ -1,10 +1,10 @@
 const router = require('express').Router()
 const crypto = require("crypto");
-require('dotenv').config();
 const { Pool } = require('pg');
+require('dotenv').config();
 const pool = new Pool({
-  connectionString: process.env.DATABASE_URL,
-  ssl: {
+    connectionString: process.env.DATABASE_URL || 'postgresql://postgres:' + process.env.REACT_APP_DATABASE_PASSWORD + '@localhost:5432/' + process.env.REACT_APP_DATABASE_NAME,
+    ssl: {
     rejectUnauthorized: false
   }
 })
