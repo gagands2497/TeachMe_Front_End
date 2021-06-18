@@ -13,7 +13,6 @@ router.post('/',async(req,res)=>{
     req.body.Password = (req.body.Password).trim();
     if(req.body.Token)
     {
-
         req.body.Token = req.body.Token.trim()
         let d = new Date();
         let time = d.getTime().toString().trim();
@@ -39,7 +38,7 @@ router.post('/',async(req,res)=>{
 
                 if(diff <= 24)
                 {
-                    res.json({
+                    res.status(200).json({
                         message : "Logged in successfully"
                     })
                 }else{
@@ -92,7 +91,7 @@ router.post('/',async(req,res)=>{
                 await client.query(
                     `INSERT INTO SESSIONS VALUES('${req.body.Email_Id}','${TOKEN}','${time}')`
                 );
-                res.json({
+                res.status(200).json({
                     Token :TOKEN,
                     message : "Logged in Successfully"
                 })
