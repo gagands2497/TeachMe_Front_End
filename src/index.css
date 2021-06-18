@@ -69,6 +69,51 @@ a{
   color: rgb(255, 217, 0);
 }
 
+
+
+/* Profile */
+#profile{
+  display: flex;
+  margin: 20vh 5vw;
+  justify-content: center;
+  /* background-color: #5CD895; */
+  /* height: 70vh; */
+}
+
+#updateProfile{
+  
+  width: 50vw;
+  border-radius: 0.5em;
+  padding: 1em;
+  background-color: #5CD895;
+  /* border-right: 2px solid ; */
+}
+#current-profile{
+  /* height: 70vh; */
+  width: 30vw;
+  border-radius: 0.5em;
+  background-color: #5CD895;
+}
+
+#updateProfile form{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+#updateProfile form input{
+  border: none;
+  outline :none;
+  border-radius: 0.5em;
+  font-size: 1.5em;
+  margin: 0.5em;
+  padding: 0.5em;
+}
+
+
+
+
+
 @keyframes rotate{
   0%{
     transform: rotateZ(0deg);
@@ -114,7 +159,7 @@ a{
   background: #05386B;  
   background: -webkit-linear-gradient(to left, #828288, #151963);  
   width: 100%;
-  height:50vh;
+  height:80vh;
   margin-bottom: 10vh;
  
 }
@@ -235,7 +280,7 @@ a{
 }
 
 .top {
-  border-radius: 10% 10% 0 0;
+  border-radius: 1em 1em 0 0;
   height: 130px;
   width: 100%;
   position: absolute;

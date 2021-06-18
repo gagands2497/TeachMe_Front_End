@@ -32,12 +32,18 @@ const ProfileImage = () => {
             body : JSON.stringify(data)
         }
 
-        fetch(url,options).then(response => {
-            return response.json()
-        }).then(data => {
-            sessionStorage.clear();
-            console.log(data);
-            window.location.href = '/'
+        fetch(url,options).then(async(response) => {
+
+            const data = await response.json();
+
+            if(response.status === 200)
+            {
+                sessionStorage.clear();
+                window.location.href = '/'
+            }else{
+                alert(data.Error);
+            }
+
         }).catch(err =>{
             console.log(err.message);
         })

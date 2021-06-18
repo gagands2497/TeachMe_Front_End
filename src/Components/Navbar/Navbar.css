@@ -1,6 +1,7 @@
 #navbar{
     height: 10vh;
     width: 100vw;
+    top: 0;
     z-index: 5;
     background-color: #5CD895;
     position: fixed;
