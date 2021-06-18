@@ -69,6 +69,33 @@ a{
   color: rgb(255, 217, 0);
 }
 
+
+
+/* Profile */
+#profile{
+  display: flex;
+  margin: 10vh 5vw;
+  justify-content: space-between;
+}
+
+#updateProfile{
+  height: 70vh;
+  width: 50vw;
+  border-radius: 0.5em;
+  background-color: black;
+}
+#current-profile{
+  height: 70vh;
+  width: 30vw;
+  border-radius: 0.5em;
+  background-color: black;
+}
+
+
+
+
+
+
 @keyframes rotate{
   0%{
     transform: rotateZ(0deg);

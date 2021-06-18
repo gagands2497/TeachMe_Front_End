@@ -4,9 +4,15 @@ const UserProfile = () => {
     return (
         <React.Fragment>
             <Navbar></Navbar>
-            <br /><br /><br /><br /><br /><br />
-            <h1 style = {{textAlign:"center" , fontFamily:"sans-serif",letterSpacing:"2px"}}>WILL UPDATE SOON</h1>
+            <div id="profile">
+                <div id="updateProfile">
 
+                </div>
+                <div id="current-profile">
+                    
+                </div>
+            </div>
+            
         </React.Fragment>
         
     );
