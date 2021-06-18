@@ -3,7 +3,7 @@
     width: 100vw;
     z-index: 5;
     background-color: #5CD895;
-    /* position: fixed; */
+    position: fixed;
 }
 #logo{
     line-height: 10vh;
