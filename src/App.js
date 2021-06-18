@@ -1,3 +1,4 @@
+import React from 'react';
 import {BrowserRouter as Router,Route,Switch} from 'react-router-dom';
 
 // ----------------import components------------
@@ -5,6 +6,7 @@ import UserProfile from './Routes/UserProfile';
 import Home from './Routes/Home';
 import Register from './Routes/Register';
 import Login from './Routes/Login';
+import About from './Routes/About'
 // ---------------------------------------------
 const App = () => {
 
@@ -20,6 +22,9 @@ const App = () => {
                 </Route>
                 <Route path = '/login'>
                     <Login></Login>
+                </Route>
+                <Route path = '/about'>
+                    <About></About>
                 </Route>
                 <Route path = "/profile" >
                     <UserProfile></UserProfile>

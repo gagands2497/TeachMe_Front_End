@@ -1,3 +1,4 @@
+import React, { Component }  from 'react';
 import './Navbar.css'
 import ProfileImage from '../ProfileImage/ProfileImage';
 const Navbar = () => {
