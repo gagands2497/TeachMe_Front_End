@@ -7,7 +7,7 @@ const UserProfile = () => {
 
     const [userType, setuserType] = useState("")
     const renderSkills = ()=>{
-        if(userType == "Teacher" || userType == "teacher"){
+        if(userType === "Teacher" || userType ==="teacher"){
             return(
                 <React.Fragment>
                     <input type="text"  placeholder= "Skill-1"/>
@@ -16,7 +16,6 @@ const UserProfile = () => {
                     <input type="text"  placeholder= "Skill-4"/>
                 </React.Fragment>
             )
-            
         }
         return(
             <React.Fragment>

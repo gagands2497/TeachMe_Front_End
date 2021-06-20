@@ -13,7 +13,7 @@ const Register = () => {
     const [isLoading, setisLoading] = useState(false);
     const [error, seterror] = useState("");
 
-    const handler = ()=>{
+    const handler = (e)=>{
         seterror("");
         let data = {
             Username:Username,
@@ -51,6 +51,8 @@ const Register = () => {
         }else{
             seterror("Please enter valid credentials")
         }
+
+        e.preventDefault();
     }
 
     return (

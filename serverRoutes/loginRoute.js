@@ -23,6 +23,7 @@ router.post('/',async(req,res)=>{
                 `SELECT * FROM SESSIONS WHERE Email_Id = '${req.body.Email_Id}'`
             );
 
+           
             const user = sessionData.rows[0];
             if(!user){
                 res.status(500).json({

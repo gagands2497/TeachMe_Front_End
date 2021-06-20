@@ -1,4 +1,4 @@
-import React, { Component }  from 'react';
+import React from 'react';
 import './Prompt.css'
 import Button from '../Button/Button';
 const Prompt = (props) => {
