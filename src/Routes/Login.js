@@ -36,7 +36,6 @@ const Login = () => {
             fetch(url,options).then(async (response)=>{
                 setisLoading(false);
                 
-                console.log("Status "+response.status);
                 const data=await response.json();
 
                 if(response.status === 200){

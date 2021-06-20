@@ -7,6 +7,7 @@ import Home from './Routes/Home';
 import Register from './Routes/Register';
 import Login from './Routes/Login';
 import About from './Routes/About'
+import TeacherProfile from './Routes/TeacherProfile';
 // ---------------------------------------------
 const App = () => {
 
@@ -28,6 +29,9 @@ const App = () => {
                 </Route>
                 <Route path = "/profile" >
                     <UserProfile></UserProfile>
+                </Route>
+                <Route path = "/TeacherProfile" >
+                    <TeacherProfile></TeacherProfile>
                 </Route>
             </Switch>
         </Router>
