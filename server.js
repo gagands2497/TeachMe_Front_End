@@ -7,7 +7,7 @@ const port = process.env.PORT || 8080;
 const registerRoute = require('./serverRoutes/registerRoute')
 const loginRoute = require('./serverRoutes/loginRoute')
 const logoutRoute = require('./serverRoutes/logoutRoute')
-const subscribeRoute = require('./serverRoutes/subscribeRoute')
+const teacherRoute = require('./serverRoutes/teacherRoute')
 
 
 //----------------------------------------CORS HANDELING USING HEADERS--------------------------
@@ -37,8 +37,7 @@ app.use(express.json());
 app.use('/api/register',registerRoute);
 app.use('/api/login',loginRoute);
 app.use('/api/logout',logoutRoute);
-app.use('/api/subscribe',subscribeRoute);
-
+app.use('/api/teacher',teacherRoute);
 // -------------------
 
 app.get('*', (req,res) =>{

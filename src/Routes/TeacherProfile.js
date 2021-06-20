@@ -1,11 +1,13 @@
-import React from 'react'
-
+import React from "react";
+import Navbar from "../Components/Navbar/Navbar";
 const TeacherProfile = () => {
     return (
-        <div>
-            Hurray
-        </div>
-    )
+        <React.Fragment>
+            <Navbar></Navbar>
+            
+        </React.Fragment>
+        
+    );
 }
-
+ 
 export default TeacherProfile;

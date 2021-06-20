@@ -1,6 +1,10 @@
+import React from "react";
+import Navbar from "../Components/Navbar/Navbar";
 const Explore = () => {
     return (
-        <h1>Explore</h1>
+        <React.Fragment>
+            <Navbar></Navbar>
+        </React.Fragment>
     );
 }
  
