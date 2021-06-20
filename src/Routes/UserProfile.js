@@ -5,14 +5,15 @@ import Button from "../Components/Button/Button";
 import Footer from "../Components/Footer/Footer";
 const UserProfile = () => {
 
-    const [userType, setuserType] = useState("")
+    const [userType, setuserType] = useState("");
+
     const renderSkills = ()=>{
         if(userType === "Teacher" || userType ==="teacher"){
             return(
                 <React.Fragment>
                     <input type="text"  placeholder= "Skill-1"/>
                     <input type="text"  placeholder= "Skill-2"/>
-                    <input type="text"  placeholder= "Skill3"/>
+                    <input type="text"  placeholder= "Skill-3"/>
                     <input type="text"  placeholder= "Skill-4"/>
                 </React.Fragment>
             )
@@ -23,6 +24,17 @@ const UserProfile = () => {
             </React.Fragment>
         )
     }
+
+    const solve = () => {
+        
+        if(userType === "Teacher" || userType ==="teacher"){
+            window.location.href = '/TeacherProfile';
+        }
+        else{
+            window.location.href = '/Explore';
+        }
+    }
+
     return (
         <React.Fragment>
             <Navbar></Navbar>
@@ -38,7 +50,7 @@ const UserProfile = () => {
                         {renderSkills()}
                         
                     </form>
-                    <Button bgColor = "#05386B" color = "#5CD895" FS = "1em">Update</Button>
+                    <Button bgColor = "#05386B" color = "#5CD895" FS = "1em" handler ={solve}>Update</Button>
                 </div>
             </div>
             <Footer></Footer>
