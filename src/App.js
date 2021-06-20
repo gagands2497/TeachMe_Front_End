@@ -3,9 +3,11 @@ import {BrowserRouter as Router,Route,Switch} from 'react-router-dom';
 
 // ----------------import components------------
 import UserProfile from './Routes/UserProfile';
+import TeacherProfile from './Routes/TeacherProfile';
 import Home from './Routes/Home';
 import Register from './Routes/Register';
 import Login from './Routes/Login';
+import Explore from './Routes/Explore'
 import About from './Routes/About'
 // ---------------------------------------------
 const App = () => {
@@ -28,6 +30,12 @@ const App = () => {
                 </Route>
                 <Route path = "/profile" >
                     <UserProfile></UserProfile>
+                </Route>
+                <Route path = "/TeacherProfile">
+                    <TeacherProfile></TeacherProfile>
+                </Route>
+                <Route path = "/Explore"> 
+                    <Explore></Explore>
                 </Route>
                 <Route path = "*">
                     <div style = {{

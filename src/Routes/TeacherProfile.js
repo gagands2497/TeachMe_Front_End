@@ -1,11 +1,13 @@
 import React from "react";
 import Navbar from "../Components/Navbar/Navbar";
-const Explore = () => {
+const TeacherProfile = () => {
     return (
         <React.Fragment>
             <Navbar></Navbar>
+            
         </React.Fragment>
+        
     );
 }
  
-export default Explore;
+export default TeacherProfile;
