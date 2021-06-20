@@ -9,7 +9,6 @@ import Register from './Routes/Register';
 import Login from './Routes/Login';
 import Explore from './Routes/Explore'
 import About from './Routes/About'
-import TeacherProfile from './Routes/TeacherProfile';
 // ---------------------------------------------
 const App = () => {
 
