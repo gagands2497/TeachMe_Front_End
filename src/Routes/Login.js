@@ -11,7 +11,7 @@ const Login = () => {
     const [error, seterror] = useState("");
 
 
-    const handler = ()=>{
+    const handler = (e)=>{
         seterror("");
         let data = {
             Email_Id:Email,
@@ -57,6 +57,8 @@ const Login = () => {
         }else{
             seterror("Please enter valid credentials")
         }
+
+        e.preventDefault();
     }
 
     return (
