@@ -7,22 +7,20 @@ const Login = () => {
 
     const [Email, setEmail] = useState("");
     const [Password, setPassword] = useState("");
-    const [isLoading, setisLoading] = useState(false);
     const [error, seterror] = useState("");
 
 
     const handler = (e)=>{
         seterror("");
         let data = {
-            Email_Id:Email,
-            Password:Password,
-            Token : sessionStorage.getItem("Token")
+            email_id:Email,
+            password:Password,
         }
 
 
-        if(Email && Password.length >= 6)
+        if(Email && Password.length >= 8)
         {
-            setisLoading(true);
+           
             sessionStorage.setItem("Email_Id",data.Email_Id)
             let options = {
                 method:"POST",
@@ -32,44 +30,30 @@ const Login = () => {
                 body : JSON.stringify(data)
             }
 
-            let url = 'http://localhost:8080/api/login'
-            fetch(url,options).then(async (response)=>{
-                setisLoading(false);
-                
-                const data=await response.json();
-
-                if(response.status === 200){
-                    sessionStorage.setItem("Token" , data.Token)
-                    window.location.href = '/profile'
-                }else{
-                    console.log(data);
-                    throw new Error(data.Error);
-                }
-
-                // return response.json();
-                
+            let url = 'https://server300.herokuapp.com/auth/student_login'
+            
+            fetch(url, options).then(response => {
+                return response.json();
+            }).then(data => {
+                console.log(data);
             })
-            .catch(err =>{
-                setisLoading(false);
-                seterror(err.message);
-            })
-        }else{
-            seterror("Please enter valid credentials")
-        }
-
         e.preventDefault();
+        }
+        else
+        {
+            console.log("Try Again");
+        }
     }
 
     return (
         <React.Fragment>
             <Navbar></Navbar>
             <Form id = "LoginForm" header = "Login">
-                {isLoading && <div id = "warning">Loading.....</div>}
+                
                 {error && <div id = "warning">{error}</div>}
                 <input type="email" name="Email_Id" placeholder = "Email Id" onChange = {(e)=>{setEmail(e.target.value)}} />
-                { !Email && <div id = "warning">Email cannot be empty</div> }
+                
                 <input type="password" name="Password" placeholder = "Password" onChange = {(e)=>{setPassword(e.target.value)}} />
-                {(Password.length < 6) && <div id = "warning">Password length must be greater than 6</div>}
                 <Button handler = {handler} color = "#5CD895" FS = "1em">Login</Button>
             </Form>
             <Footer></Footer>

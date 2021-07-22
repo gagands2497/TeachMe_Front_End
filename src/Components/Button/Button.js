@@ -8,7 +8,9 @@ const Button = (props) => {
         fontSize : props.FS,
         color:props.color,
         borderWidth : props.borderWidth,
-        borderColor : props.color
+        borderColor : props.color,
+        marginRight :props.right_margin,
+        marginTop :props.top_margin
     }
 
     return (

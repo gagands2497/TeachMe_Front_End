@@ -9,10 +9,11 @@ import Register from './Routes/Register';
 import Login from './Routes/Login';
 import Explore from './Routes/Explore'
 import About from './Routes/About'
+import StudentRegister from './Routes/StudentRegister'
+import StudentORTeacher from './Routes/StudentORTeacher'
+import TeacherRegister from './Routes/TeacherRegister'
 // ---------------------------------------------
 const App = () => {
-
-    
     return (  
         <Router>
             <Switch>
@@ -20,13 +21,22 @@ const App = () => {
                     <Home></Home>
                 </Route>
                 <Route path = '/register'>
-                    <Register></Register>
+                    <StudentORTeacher />
                 </Route>
                 <Route path = '/login'>
                     <Login></Login>
                 </Route>
+                <Route path = '/StudentRegister'>
+                    <StudentRegister />
+                </Route>
+                <Route path = '/TeacherRegister'>
+                    <TeacherRegister />
+                </Route>
                 <Route path = '/about'>
                     <About></About>
+                </Route>
+                <Route path='/StudentORTeacher'>
+                    <StudentORTeacher />
                 </Route>
                 <Route path = "/profile" >
                     <UserProfile></UserProfile>
