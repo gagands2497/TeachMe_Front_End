@@ -1,9 +1,30 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Navbar from "../Components/Navbar/Navbar";
 import Footer from "../Components/Footer/Footer";
 
 
 const TeacherProfile = () => {
+
+    useEffect(() => {
+        let options = {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json"
+            }
+        }
+
+        let url = 'https://server300.herokuapp.com/teacher/teacher_personal_profile';
+
+        fetch(url, options).then(response => {
+            return response.json();
+        }).then(data => {
+            console.log(data);
+        }).catch(err => {
+            // console.log(err);
+        });
+    })
+
+
     var p = "https://media-exp3.licdn.com/dms/image/C5603AQHRO0_5q-5Nfw/profile-displayphoto-shrink_400_400/0/1588227680293?e=1629936000&v=beta&t=pIIu_7NZg2yttVByYV_s_27Izf5mGaoHh4hv6fuCaiE";
     return (
         <React.Fragment>
@@ -39,6 +60,7 @@ const TeacherProfile = () => {
                 </div>
             </div>
             <Footer></Footer>
+
         </React.Fragment >
     );
 }

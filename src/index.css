@@ -649,3 +649,24 @@ h1.first-name {
   text-align: center;
   font-weight: bold;
 }
+
+
+
+/* Login Section Starts */
+
+#usertype{
+  display: flex;
+  justify-content:center;
+  margin-bottom: 20px;
+  margin-top:20px;
+}
+
+.label1{
+  display: flex;
+  font-size:1em;
+  color: #fff;
+  flex-direction:column-reverse;
+  justify-content: center;
+  align-items:center;
+  width: 150px;
+}

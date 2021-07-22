@@ -12,7 +12,6 @@ const StudentRegister = () => {
     const [Password, setPassword] = useState("");
     const [Description, setDescription] = useState("");
     const [ph_number, setph_number] = useState("");
-    const [ProfileURL, setProfileURL] = useState("");
     const [error, seterror] = useState("");
     const [isLoading, setisLoading] = useState(false);
     const [Success, setSuccess] = useState("");
@@ -27,7 +26,6 @@ const StudentRegister = () => {
             password: Password,
             ph_number: ph_number,
             description: Description,
-            profile_url: ProfileURL
         }
 
         if (Email && Username && ph_number && Description) {
@@ -60,7 +58,7 @@ const StudentRegister = () => {
                 }
                 else {
                     console.log(data.message);
-                    window.location.href = '/Explore';
+                    window.location.href = '/TeacherProfile';
                     setSuccess(data.message);
                 }
             })
@@ -83,7 +81,6 @@ const StudentRegister = () => {
                 <input type="email" name="email_id" placeholder="Email Id *" onChange={(e) => { setEmail(e.target.value) }} />
                 <input type="text" name="ph_number" placeholder="Mobile Number *" onChange={(e) => { setph_number(e.target.value) }} />
                 <input type="text" name="description" placeholder="Description *" onChange={(e) => { setDescription(e.target.value) }} />
-                <input type="text" name="profile_url" placeholder="Profile Image URL" onChange={(e) => { setProfileURL(e.target.value) }} />
                 <input type="password" name="Password" placeholder="Password *" onChange={(e) => { setPassword(e.target.value) }} />
                 <Button handler={handle_it} color="#5CD895" FS="1em">Register</Button>
             </Form>

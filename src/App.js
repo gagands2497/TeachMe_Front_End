@@ -5,7 +5,6 @@ import {BrowserRouter as Router,Route,Switch} from 'react-router-dom';
 import UserProfile from './Routes/UserProfile';
 import TeacherProfile from './Routes/TeacherProfile';
 import Home from './Routes/Home';
-import Register from './Routes/Register';
 import Login from './Routes/Login';
 import Explore from './Routes/Explore'
 import About from './Routes/About'
