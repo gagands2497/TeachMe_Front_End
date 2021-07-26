@@ -19,26 +19,30 @@ const Update_Profile = () => {
         const form = document.getElementById("TeacherForm");
         seterrors([]);
 
-        let data = {}
+        const inputFile = document.getElementById("ProfileImage");
+
+        var formData = new FormData();
 
         if (name)
-            data.name = name;
-        if (ph_number)
-            data.ph_number = ph_number;
-        if (description)
-            data.description = description;
+            formData.append('name', name);
 
-        if (form.ProfileImage)
-            data.profile_image = form.ProfileImage.value;
+        if (ph_number)
+            formData.append('ph_number', ph_number);
+
+        if (description)
+            formData.append('description', description);
+
+        if (inputFile.files[0])
+            formData.append('profile_image', inputFile.files[0]);
 
 
         let options = {
             headers: {
                 "Authorization": `Bearer ${sessionStorage.getItem("Access_Token")}`,
-                "Content-Type": "application/json"
+                "Content-Type": "multipart/ form - data; boundary =—-WebKitFormBoundaryfgtsKTYLsT7PNUVD"
             },
             method: "POST",
-            body: JSON.stringify(data)
+            body: formData
         }
 
         const url = `${base_req_url}/teacher/update_data`;
@@ -108,7 +112,7 @@ const Update_Profile = () => {
                         <textarea name="description" id="description" placeholder="Write The Description Here ..." onChange={(e) => { setdescription(e.target.value) }}></textarea>
                         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-around', width: '100%', margin: "1rem" }}>
                             <h1 class="img-label">Select Profile Image</h1>
-                            <input type="file" name="ProfileImage" id="" />
+                            <input type="file" name="ProfileImage" id="ProfileImage" />
                         </div>
                         <input onClick={handler} type="button" value="Update" />
                     </form>
