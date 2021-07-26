@@ -352,6 +352,7 @@ a{
   position: relative;
   margin-bottom: 5vh;
   margin-top:14vh;
+  transition: 0.5s;
 }
 
 .profile-bg {
@@ -440,6 +441,10 @@ h1.first-name {
 
 .profile-info p {
   line-height: 1.5rem;
+  width:70vh;
+  word-wrap: break-word;
+  font-style: italic;
+  overflow:hidden;
 }
 
 .social-media-icons {
@@ -473,19 +478,29 @@ h1.first-name {
   align-items: center;
 }
 
-.skills p {
+.skills a{
   margin-top:7vh;
   margin-bottom: 3%;
   flex: auto;
   margin-left: 10vw;
   color: #f63d47;
+  transition: 0.5s;
+  border-radius: 0.5rem;
 }
 
-.skills p strong {
+.skills a strong {
   font-size: 1.4rem;
   color: #000;
   font-weight: 2em;
   margin-right: 0.3rem;
+  transition: 0.5s;
+  border-radius: 0.5rem;
+}
+
+.skills a:hover{
+  background-color: #f63d47;
+  padding:0.5rem;
+  
 }
 
 .icon {

@@ -6,22 +6,49 @@ import Footer from "../Components/Footer/Footer";
 const TeacherProfile = () => {
 
     useEffect(() => {
-        let options = {
+
+        const options = {
             method: "GET",
             headers: {
-                "Content-Type": "application/json"
+                "Content-Type": "application/json",
+                "Authorization": `bearer ${Token}`
             }
         }
+        const base_req_url = "https://server300.herokuapp.com";
+        const userType = "teacher";
+        const Token = sessionStorage.getItem("Access_Token");
 
-        let url = 'https://server300.herokuapp.com/teacher/teacher_personal_profile';
+        const url = `${base_req_url}/${userType}/personal_profile`;
+        fetch(url, options)
+            .then(Response => {
+                return Response.json();
+            })
+            .then(resdata => {
+                // setuserData(resdata.userData);
+                // setisLoading(false);
+                console.log(resdata);
+            })
+            .catch(error => {
+                console.log(error);
+            })
 
-        fetch(url, options).then(response => {
-            return response.json();
-        }).then(data => {
-            console.log(data);
-        }).catch(err => {
-            // console.log(err);
-        });
+
+        // let options = {
+        //     method: "GET",
+        //     headers: {
+        //         "Content-Type": "application/json"
+        //     }
+        // }
+
+        // let url = 'https://server300.herokuapp.com/teacher/teacher_personal_profile';
+
+        // fetch(url, options).then(response => {
+        //     return response.json();
+        // }).then(data => {
+        //     console.log(data);
+        // }).catch(err => {
+        //     // console.log(err);
+        // });
     })
 
 

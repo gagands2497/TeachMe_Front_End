@@ -44,3 +44,23 @@
 .form input::placeholder{
   color: #EDF5E1;
 }
+
+.form textarea {
+  display: block;
+  margin: 1em;
+  color: #EDF5E1;
+  font-size: 1.5em;
+  padding: 0.5em;
+  background-color: #05386B;
+  outline: none;
+  border:1px solid #EDF5E1;
+  font-family: sans-serif;
+  width: auto;
+  height: auto;
+  border-radius: 10px;
+  overflow:auto;
+}
+
+.form textarea::placeholder{
+  color: #EDF5E1;
+}

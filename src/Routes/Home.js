@@ -12,13 +12,13 @@ const Home = (props) => {
                 <h2>TOUCH THE SKY WITH YOUR TEACHER</h2>
                 <div id="logoImage"><img src={logoImage} alt="" /></div>
                 <div id="home-btns">
-                    <a href="/StudentORTeacher"><Button borderWidth = "0" bgColor = "#05386B" color = "#EDF5E1" FS = "1.5em">Sign Up</Button></a>
-                    <a href="/login"><Button borderWidth = "0" bgColor = "#05386B" color = "#EDF5E1" FS = "1.5em">Sign In</Button></a>
+                    <a href="/register"><Button borderWidth="0" bgColor="#05386B" color="#EDF5E1" FS="1.5em">Sign Up</Button></a>
+                    <a href="/login"><Button borderWidth="0" bgColor="#05386B" color="#EDF5E1" FS="1.5em">Sign In</Button></a>
                 </div>
             </div>
             <Footer></Footer>
         </React.Fragment>
     );
 }
- 
+
 export default Home;

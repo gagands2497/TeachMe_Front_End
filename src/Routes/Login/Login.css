@@ -1,0 +1,71 @@
+#form{
+    display: flex;
+    justify-content: center;
+}
+#loginForm{
+    display: flex;
+    flex-direction: column;
+    margin: 5rem;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    border: 0.5rem solid rgb(46, 49, 75);
+}
+
+
+#loginForm input{
+    font-size: 1.5rem;
+    padding: 1rem;
+    margin : 1rem;
+    border-radius: 0.5rem;
+}
+
+#loginForm input[type = "button"]{
+    background-color: rgb(46, 49, 75);
+    border-radius: 0.5rem;
+    color: white;
+    cursor: pointer;
+}
+
+
+#loginForm input[type = 'radio']{
+    cursor: pointer;
+    height: 1.5rem;
+    width: 1.5rem;
+}
+
+#loginForm label{
+    font-size: 1.5rem;
+}
+
+#radioOptions{
+    display: flex;
+    justify-content: space-around;
+}
+#radioOptions div{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+#errors{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: 0.5s;
+}
+
+.errorMessage{
+    background-color: pink;
+    color: red;
+    width: 50%;
+    font-size: 1.5rem;
+    border-radius: 0.5rem;
+    border: 1px solid red;
+    text-align: center;
+    padding: 1rem;
+    margin: 1rem;
+    transition: 0.5s;
+}
+
+

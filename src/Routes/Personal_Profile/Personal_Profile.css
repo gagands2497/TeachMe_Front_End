@@ -1,0 +1,67 @@
+#student_profile{
+    background-color: rgb(46, 49, 75);
+    padding: 1rem;
+    margin:10rem;
+    display: inline-flex;
+    /* flex-direction: column; */
+    border-radius: 0.5rem;
+    position: relative;
+}
+
+#student_profile span{
+    margin: 0.5rem 1rem;
+    color: white;
+    font-size: 1.5rem;
+    padding: 1rem;
+    /* border: 0.1rem solid white; */
+}
+
+#student_profile div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#studentImage img{
+    height: 10rem;
+    width: 10rem;
+    margin: 2rem;
+    border-radius: 2rem;
+    position: absolute;
+    background-color: aliceblue;
+    top: -8rem;
+    right: -5rem;
+    padding: 0.5rem;
+    border: 0.1rem solid rgb(46, 49, 75);
+}
+
+
+#student_data{
+    display: flex;
+
+}
+
+#courseTakenHistory{
+    display: flex;
+    justify-content: center;
+    background-color: rgb(46, 49, 75);
+    margin: 10rem;
+    color: aliceblue;
+    border-radius: 0.5rem;
+    overflow-y: scroll;
+    padding: 2rem;
+}
+
+#courseTakenHistory button{
+    border-radius: 0.5rem;
+    color: white;
+    padding: 0.5rem;
+    margin: 1rem ;
+    background: none;
+    border: none;
+    transition: 0.5s;
+}
+
+#courseTakenHistory button:hover{
+    text-decoration: underline;
+}
