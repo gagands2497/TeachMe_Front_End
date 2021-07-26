@@ -1,32 +1,25 @@
-import React from 'react'
-import Form from "../../Components.Form.Form";
-
+import React, { useState } from 'react'
+import Navbar from '../../Components/Navbar/Navbar'
+import './Teacher_Stuff.css';
 
 const Create_Course = () => {
+
+    const [errors, seterrors] = useState([]);
+
+
     return (
         < React.Fragment >
-
+            <Navbar />
             < div id="form" >
-                <form id="loginForm">
-                    <input type="email" name="email_id" id="" placeholder="Email_id" />
-                    <input type="password" name="password" id="" placeholder="Password" />
-                    <div id="radioOptions">
-                        <div>
-                            <label htmlFor="userType">Teacher</label>
-                            <input type="radio" name="userType" id="" value="teacher" onClick={(e) => {
-                                setuserType("teacher");
-                            }} />
-                        </div>
-                        <div>
-                            <label htmlFor="userType">Student</label>
-                            <input type="radio" name="userType" id="" value="student" onClick={(e) => {
-                                setuserType("student");
-                            }} />
-                        </div>
-                    </div>
-                    <input onClick={handleSubmit} type="button" value="Login" />
+                <form id="Teacher_Form">
+                    <input type="text" name="course_name" id="" placeholder="Course Name" />
+                    <input type="text" name="course_topic" id="" placeholder="Course Topic" />
+                    <textarea name="description" id="description" placeholder="Write The Course Description Here ..."></textarea>
+                    <input type="text" name="Storage Link" id="" placeholder="Storage Link" />
+
+                    <input type="button" value="Create" />
                 </form>
-                </ >
+            </ div>
         </React.Fragment >
     )
 }

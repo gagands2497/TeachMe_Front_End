@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Navbar from "../../Components/Navbar/Navbar";
-
 import './SignUp.css';
+
 const base_req_url = "https://server300.herokuapp.com";
 // const base_req_url = require('../../../base_req_url');
 const SignUp = () => {

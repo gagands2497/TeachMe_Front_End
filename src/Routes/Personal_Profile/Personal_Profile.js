@@ -91,9 +91,9 @@ const Personal_Profile = (props) => {
                             </section>
 
                             <section class="skills">
-                                <a href="#"><strong>Create Course</strong> </a>
+                                <a href="/create_course"><strong>Create Course</strong> </a>
                                 <a href="#"><strong>Session Requests</strong> </a>
-                                <a href="#"><strong>Update profile</strong> </a>
+                                <a href="/Update_Profile"><strong>Update profile</strong> </a>
                             </section>
                             <button class="icon close"></button>
                         </div>

@@ -10,6 +10,9 @@ import About from './Routes/About';
 import Login from './Routes/Login/Login';
 import SignUp from './Routes/SignUp/SignUp';
 import Personal_Profile from './Routes/Personal_Profile/Personal_Profile';
+import Create_Course from './Routes/Teacher_Stuff/Create_Course';
+import Update_Profile from './Routes/Teacher_Stuff/Update_Profile';
+
 // ---------------------------------------------
 const App = () => {
     return (
@@ -24,7 +27,12 @@ const App = () => {
                 <Route path='/login'>
                     <Login></Login>
                 </Route>
-
+                <Route path="/create_course">
+                    <Create_Course />
+                </Route>
+                <Route path="/Update_Profile">
+                    <Update_Profile />
+                </Route>
 
                 <Route path='/about'>
                     <About></About>

@@ -1,0 +1,40 @@
+#form{
+    display: flex;
+    justify-content: center;
+    background-color: azure;
+}
+#Teacher_Form{
+    display: flex;
+    flex-direction: column;
+    margin: 5rem;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    border: 0.5rem solid rgb(46, 49, 75);
+}
+
+
+#Teacher_Form input{
+    font-size: 1.5rem;
+    padding: 1rem;
+    margin : 1rem;
+    border-radius: 0.5rem;
+}
+
+#Teacher_Form input[type = "button"]{
+    background-color: rgb(46, 49, 75);
+    border-radius: 0.5rem;
+    color: white;
+    cursor: pointer;
+}
+
+
+#Teacher_Form input[type = 'radio']{
+    cursor: pointer;
+    height: 1.5rem;
+    width: 1.5rem;
+}
+
+#Teacher_Form label{
+    font-size: 1.5rem;
+}
+
