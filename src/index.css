@@ -380,7 +380,7 @@ a{
   position: relative;
   border-radius: 10px;
   box-shadow: 0 25px 45px -20px rgba(255, 0, 47, 0.55),
-    inset 0 0px 120px rgba(255, 0, 47, 0.75);
+  inset 0 0px 120px rgba(255, 0, 47, 0.75);
   width: 45%;
   flex: none;
   background-image: url("https://zephyo.github.io/22Days/code/3/graphics/profile.png");
@@ -684,4 +684,27 @@ h1.first-name {
   justify-content: center;
   align-items:center;
   width: 150px;
+}
+
+.success{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: 0.5s;
+    margin-top:10vh;
+    background-color:#5CD895;
+}
+
+.successMessage{
+    background-color: rgb(220, 255, 192);
+    color: rgb(223, 205, 45);
+    width: 50%;
+    font-size: 1.5rem;
+    border-radius: 0.5rem;
+    border: 1px solid rgb(255, 166, 0);
+    text-align: center;
+    padding: 1rem;
+    margin: 1rem;
+    transition: 0.5s;
 }

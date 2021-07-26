@@ -32,6 +32,7 @@ const Personal_Profile = (props) => {
                     return Response.json();
                 })
                 .then(resdata => {
+                    console.log(resdata);
                     setuserData(resdata.userData);
                     if (resdata.profile_url != null)
                         p = resdata.profile_url;
@@ -72,10 +73,10 @@ const Personal_Profile = (props) => {
                     <div className="teacher">
                         <div class="profile">
                             <div class="profile-bg"></div>
-                            <section class="container">
-                                <div class="profile-image" style={{ backgroundImage: `url(${p})` }}>
+                            <div class="container">
+                                <aside class="profile-image" style={{ backgroundImage: `url(${p})` }}>
                                     <a class="camera" href="#"><i class="fas fa-camera"></i></a>
-                                </div>
+                                </aside>
 
                                 <div class="profile-info">
                                     <h1 class="first-name">{userData.name}</h1>
@@ -88,7 +89,7 @@ const Personal_Profile = (props) => {
                                         <a href="" target="_blank"><i class="fab fa-github"></i></a>
                                     </aside>
                                 </div>
-                            </section>
+                            </div>
 
                             <section class="skills">
                                 <a href="/create_course"><strong>Create Course</strong> </a>

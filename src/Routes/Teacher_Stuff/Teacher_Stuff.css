@@ -38,3 +38,51 @@
     font-size: 1.5rem;
 }
 
+#Teacher_Form h1{
+    text-align: center;
+}
+
+
+
+/* ---------------------------------------------------- */
+#TeacherForm{
+    display: flex;
+    flex-direction: column;
+    margin: 5rem;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    border: 0.5rem solid rgb(46, 49, 75);
+}
+
+
+#TeacherForm input{
+    font-size: 1.5rem;
+    padding: 1rem;
+    margin : 1rem;
+    border-radius: 0.5rem;
+}
+
+#TeacherForm input[type = "button"]{
+    background-color: rgb(46, 49, 75);
+    border-radius: 0.5rem;
+    color: white;
+    cursor: pointer;
+}
+
+
+#TeacherForm input[type = 'radio']{
+    cursor: pointer;
+    height: 1.5rem;
+    width: 1.5rem;
+}
+
+#TeacherForm label{
+    font-size: 1.5rem;
+}
+
+#TeacherForm h1{
+    text-align: center;
+}
+
+
+

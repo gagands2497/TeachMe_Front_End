@@ -47,17 +47,20 @@ const Login = () => {
                     if (response_data.Access_Token) {
                         sessionStorage.setItem("Access_Token", response_data.Access_Token);
                         setisLoading(false);
-                        window.location.href = `${userType}/profile`
+                        if (userType === "teacher")
+                            window.location.href = `${userType}/profile`
+                        else
+                            window.location.href = `/Explore`
                     }
                 }
             })
             .catch(err => {
                 setisLoading(false)
+                console.log(err);
                 if (err.message === 'Failed to fetch') {
                     err.message = "Server is offline please Try again"
                 }
                 seterrors([err]);
-                console.log(err);
             })
 
     }
@@ -88,18 +91,18 @@ const Login = () => {
                 {showErrors()}
                 <div id="form">
                     <form id="loginForm">
-                        <input type="email" name="email_id" id="" placeholder="Email_id" />
-                        <input type="password" name="password" id="" placeholder="Password" />
+                        <input type="email" name="email_id" placeholder="Email_id" />
+                        <input type="password" name="password" placeholder="Password" />
                         <div id="radioOptions">
                             <div>
                                 <label htmlFor="userType">Teacher</label>
-                                <input type="radio" name="userType" id="" value="teacher" onClick={(e) => {
+                                <input type="radio" name="userType" value="teacher" onClick={(e) => {
                                     setuserType("teacher");
                                 }} />
                             </div>
                             <div>
                                 <label htmlFor="userType">Student</label>
-                                <input type="radio" name="userType" id="" value="student" onClick={(e) => {
+                                <input type="radio" name="userType" value="student" onClick={(e) => {
                                     setuserType("student");
                                 }} />
                             </div>

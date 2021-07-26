@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 // ----------------import components------------
 import UserProfile from './Routes/UserProfile';
-import TeacherProfile from './Routes/TeacherProfile';
 import Home from './Routes/Home';
 import Explore from './Routes/Explore';
 import About from './Routes/About';
