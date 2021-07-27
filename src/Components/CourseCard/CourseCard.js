@@ -1,4 +1,4 @@
-import './ExploreCard.css';
+import './CourseCard.css';
 import React from 'react';
 // import profileImage from '../../Images/profile.png';
 

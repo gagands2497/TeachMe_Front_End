@@ -4,23 +4,32 @@
     top: 0;
     z-index: 5;
     background-color: #5CD895;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
     position: fixed;
 }
 #logo{
     line-height: 10vh;
     margin: 2vh;
-    font-size: 1.5em;
+    font-size: 1.5rem;
     padding:1vh;
     color: #05386B;
     border-radius: 0.5em;
     font-family: sans-serif;
-    font-weight: 600;
     letter-spacing: 1.5px;
     transition: 0.5s;
     font-weight: 900;
     cursor: pointer;
 }
 
+#navbar a{
+    font-size: 1.5rem;
+    color: #05386B;
+    font-family: sans-serif;
+    letter-spacing: 1.5px;
+    font-weight: 900;
+}
 
 #navbar span:hover{
     background-color: #05386B;

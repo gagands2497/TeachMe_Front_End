@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
 import './Login.css';
+import Error from "../../Components/Error/Error"
 import Navbar from "../../Components/Navbar/Navbar";
 const base_req_url = "https://server300.herokuapp.com";
 
 
 const Login = () => {
-
+    if (sessionStorage.getItem("Access_Token")) {
+        window.location.href = '/teacher/profile'
+    }
     const [errors, seterrors] = useState([]);
     const [isLoading, setisLoading] = useState(false);
     const [userType, setuserType] = useState("student");
@@ -64,20 +67,6 @@ const Login = () => {
             })
 
     }
-
-    const showErrors = () => {
-        if (errors.length) {
-            return <div id="errors">
-                {
-                    errors.map(err => {
-                        return <div className="errorMessage">{err.msg || err.message}</div>
-                    })
-                }
-            </div>
-        } else {
-            return <div></div>
-        }
-    }
     if (isLoading) {
         return <h1 style={{
             textAlign: 'center',
@@ -88,7 +77,8 @@ const Login = () => {
     } else
         return (
             <React.Fragment>
-                {showErrors()}
+                <Navbar/>
+                <Error errors={errors} />
                 <div id="form">
                     <form id="loginForm">
                         <input type="email" name="email_id" placeholder="Email_id" />

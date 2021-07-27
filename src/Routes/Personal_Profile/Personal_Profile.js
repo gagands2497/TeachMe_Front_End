@@ -70,6 +70,7 @@ const Personal_Profile = (props) => {
         } else {
             return (
                 <React.Fragment>
+                    <Navbar></Navbar>
                     <div className="teacher">
                         <div class="profile">
                             <div class="profile-bg"></div>

@@ -1,7 +1,7 @@
 #form{
   display: flex;
   justify-content: center;
-  background-color: #5CD895;
+  background-color: white;
 }
 
 .form {
@@ -11,7 +11,7 @@
   /* top: 20vh; */
   /* left: 5vw; */
   border-radius: 0.5em;
-  background-color: #05386B;
+  background-color: white;
   /* position: absolute; */
   /* filter: blur(20px); */
   z-index: 5;

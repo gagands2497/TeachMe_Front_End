@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "../Components/Navbar/Navbar";
-import ExploreCard from "../Components/ExploreCard/ExploreCard";
+import CourseCard from "../Components/CourseCard/CourseCard";
+import Error from "../Components/Error/Error";
 
 const base_req_url = "https://server300.herokuapp.com";
 
@@ -9,11 +10,11 @@ const Explore = () => {
     const [courseData, setcourseData] = useState([]);
     const [pageNumber, setPageNumber] = useState(1);
     const [errors, seterrors] = useState([]);
-
+    const [isLoading, setisLoading] = useState(false);
     const handler = (e) => {
 
         seterrors([]);
-
+        setisLoading(true);
         const url = `${base_req_url}/course/search_courses?course_topic=${search}&pageNumber=${pageNumber}`;
         console.log(url)
 
@@ -31,33 +32,24 @@ const Explore = () => {
                 if (res.errors) {
                     seterrors(res.errors);
                     setcourseData([]);
+                    setisLoading(false);
                 }
                 else {
                     console.log(res);
                     setcourseData(res.data);
                     seterrors([])
+                    setisLoading(false);
                 }
             }).catch(err => {
+                err.data = [{
+                    msg: err.message ? err.message : "Server is offline"
+                }]
+                seterrors([err]);
+                setisLoading(false);
                 console.log(err);
             })
 
     }
-
-    const printErrors = () => {
-        if (errors.length) {
-            return <div id="errors">
-                {
-                    errors.map(err => {
-                        return <div className="errorMessage">{err.msg || err.message}</div>
-                    })
-                }
-            </div>
-        }
-        else {
-            return <div></div>
-        }
-    }
-
     useEffect(() => {
         handler();
         if (pageNumber === 1) {
@@ -70,28 +62,41 @@ const Explore = () => {
         }
     }, [pageNumber, search]);
 
-    return (
-        <React.Fragment>
-            <Navbar></Navbar>
-            <div className="SearchCourse">
-                <input onChange={(e) => { setSearch(e.target.value) }} className="SearchBar" type="text" placeholder="Search.." />
-            </div>
-            {printErrors()}
-            <div className="explore_base">
-                {
-                    courseData.map(function (course) {
-                        return <ExploreCard CourseName={course.course_name} CourseTopic={course.course_topic} CourseDescription={course.description} />
-                    })
-                }
-
-                <div className="next_prev">
-                    <button onClick={() => { setPageNumber(pageNumber - 1) }} className="direction" id="prev">Prev</button>
-                    <h4>{pageNumber}</h4>
-                    <button onClick={() => { setPageNumber(pageNumber + 1) }} className="direction" name="next">Next</button>
+    if (isLoading) {
+        return <h1 style={{
+            textAlign: 'center',
+            margin: "5rem",
+            fontSize: "3rem",
+            letterSpacing: "2px"
+        }}>Loading....</h1>
+    } else {
+        return (
+            <React.Fragment>
+                <Navbar></Navbar>
+                <Error errors={errors} />
+                <div className="SearchCourse">
+                    <input onChange={(e) => { setSearch(e.target.value) }} className="SearchBar" type="text" placeholder="Search.." />
                 </div>
-            </div>
-        </React.Fragment>
-    );
+                <div className="explore_base">
+                    {
+                        courseData.map(function (course) {
+                            return <CourseCard CourseName={course.course_name} CourseTopic={course.course_topic} CourseDescription={course.description} />
+                        })
+                    }
+
+                    <div className="next_prev">
+                        <button onClick={() => {
+                            if (pageNumber > 1)
+                                setPageNumber(pageNumber - 1)
+
+                        }} className="direction" id="prev">Prev</button>
+                        <h4>{pageNumber}</h4>
+                        <button onClick={() => { setPageNumber(pageNumber + 1) }} className="direction" name="next">Next</button>
+                    </div>
+                </div>
+            </React.Fragment>
+        );
+    }
 }
 
 export default Explore;
