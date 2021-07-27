@@ -35,11 +35,11 @@ const Update_Profile = () => {
         if (inputFile.files[0])
             formData.append('profile_image', inputFile.files[0]);
 
-
+        console.log(formData);
         let options = {
             headers: {
                 "Authorization": `Bearer ${sessionStorage.getItem("Access_Token")}`,
-                "Content-Type": "multipart/ form - data; boundary =—-WebKitFormBoundaryfgtsKTYLsT7PNUVD"
+                "Content-Type": "multipart/form-data"
             },
             method: "POST",
             body: formData
@@ -60,6 +60,7 @@ const Update_Profile = () => {
                     console.log(res.errors);
                 }
                 else {
+                    console.log(res);
                     setisLoading(false);
                     setsuccess(res.message);
                 }

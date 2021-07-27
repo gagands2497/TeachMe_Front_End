@@ -9,12 +9,13 @@ const ExploreCard = (props) => {
         <div className="CourseCard">
             <div id="information">
                 <img src={profileImage} alt="" />
+                <a href="">View Profile</a>
             </div>
             <div id="about">
-                <h1 id="name">Gagandeep Singh</h1>
-                <h1>Student of Computer Science and Engineering @NIT - Jalandhar</h1>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eaque sed atque, deserunt harum labore ratione voluptatibus porro odio laborum reiciendis voluptatem. Eligendi blanditiis officia quidem. Quae omnis ipsum repudiandae nulla!</p>
-                <a href="mailto: gagands2497@gmail.com">gagands2497@gmail.com</a>
+                <h1 id="name">{props.CourseName}</h1>
+                <h1>{props.CourseTopic}</h1>
+                <p>{props.CourseDescription}</p>
+                <a href="">View Course</a>
             </div>
         </div>
     );
