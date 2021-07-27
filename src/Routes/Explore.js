@@ -7,12 +7,15 @@ const base_req_url = "https://server300.herokuapp.com";
 const Explore = () => {
     const [search, setSearch] = useState("");
     const [courseData, setcourseData] = useState([]);
+    const [pageNumber, setPageNumber] = useState(1);
+    const [errors, seterrors] = useState([]);
 
     const handler = (e) => {
-        if (e)
-            setSearch(e.target.value);
 
-        const url = `${base_req_url}/course/search_courses?course_topic=${search}`;
+        seterrors([]);
+
+        const url = `${base_req_url}/course/search_courses?course_topic=${search}&pageNumber=${pageNumber}`;
+        console.log(url)
 
         let options = {
             method: "GET",
@@ -25,25 +28,55 @@ const Explore = () => {
             .then(response => {
                 return response.json();
             }).then(res => {
-                console.log(res);
-                setcourseData(res.data);
+                if (res.errors) {
+                    seterrors(res.errors);
+                    setcourseData([]);
+                }
+                else {
+                    console.log(res);
+                    setcourseData(res.data);
+                    seterrors([])
+                }
             }).catch(err => {
                 console.log(err);
             })
 
     }
 
+    const printErrors = () => {
+        if (errors.length) {
+            return <div id="errors">
+                {
+                    errors.map(err => {
+                        return <div className="errorMessage">{err.msg || err.message}</div>
+                    })
+                }
+            </div>
+        }
+        else {
+            return <div></div>
+        }
+    }
+
     useEffect(() => {
-        handler()
-    }, []);
+        handler();
+        if (pageNumber === 1) {
+            document.getElementById("prev").disabled = true;
+            document.getElementById("prev").style.backgroundColor = "white";
+        }
+        else {
+            document.getElementById("prev").disabled = false;
+            document.getElementById("prev").style.backgroundColor = "#5CD895";
+        }
+    }, [pageNumber, search]);
 
     return (
         <React.Fragment>
             <Navbar></Navbar>
             <div className="SearchCourse">
-                <input onChange={handler} className="SearchBar" type="text" placeholder="Search.." />
+                <input onChange={(e) => { setSearch(e.target.value) }} className="SearchBar" type="text" placeholder="Search.." />
             </div>
-
+            {printErrors()}
             <div className="explore_base">
                 {
                     courseData.map(function (course) {
@@ -51,11 +84,11 @@ const Explore = () => {
                     })
                 }
 
-                {/* <ExploreCard CourseName="Web Bootcamp" CourseTopic="React Js" CourseDescription="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eaque sed atque, deserunt harum labore ratione voluptatibus porro odio laborum reiciendis voluptatem. Eligendi blanditiis officia quidem. Quae omnis ipsum repudiandae nulla!" CourseTeacher="Angela Yu" />
-                <ExploreCard CourseName="Web Bootcamp" CourseTopic="React Js" CourseDescription="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eaque sed atque, deserunt harum labore ratione voluptatibus porro odio laborum reiciendis voluptatem. Eligendi blanditiis officia quidem. Quae omnis ipsum repudiandae nulla!" CourseTeacher="Angela Yu" />
-                <ExploreCard CourseName="Web Bootcamp" CourseTopic="React Js" CourseDescription="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eaque sed atque, deserunt harum labore ratione voluptatibus porro odio laborum reiciendis voluptatem. Eligendi blanditiis officia quidem. Quae omnis ipsum repudiandae nulla!" CourseTeacher="Angela Yu" />
-                <ExploreCard CourseName="Web Bootcamp" CourseTopic="React Js" CourseDescription="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eaque sed atque, deserunt harum labore ratione voluptatibus porro odio laborum reiciendis voluptatem. Eligendi blanditiis officia quidem. Quae omnis ipsum repudiandae nulla!" CourseTeacher="Angela Yu" />
-                <ExploreCard CourseName="Web Bootcamp" CourseTopic="React Js" CourseDescription="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eaque sed atque, deserunt harum labore ratione voluptatibus porro odio laborum reiciendis voluptatem. Eligendi blanditiis officia quidem. Quae omnis ipsum repudiandae nulla!" CourseTeacher="Angela Yu" /> */}
+                <div className="next_prev">
+                    <button onClick={() => { setPageNumber(pageNumber - 1) }} className="direction" id="prev">Prev</button>
+                    <h4>{pageNumber}</h4>
+                    <button onClick={() => { setPageNumber(pageNumber + 1) }} className="direction" name="next">Next</button>
+                </div>
             </div>
         </React.Fragment>
     );

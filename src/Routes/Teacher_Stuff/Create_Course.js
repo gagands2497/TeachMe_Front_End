@@ -50,8 +50,7 @@ const Create_Course = () => {
                 else {
                     setisLoading(false);
                     setsuccess(res.message);
-                    setsuccess("");
-                    // console.log(success);
+                    console.log(success);
                 }
             }).catch(err => {
                 setisLoading(false);
