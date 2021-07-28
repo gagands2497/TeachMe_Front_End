@@ -30,7 +30,7 @@ const Home = (props) => {
                     <h1>About Developers</h1>
                     <div id="Developers">
                         <div className="devCard">
-                            <img src="https://media-exp1.licdn.com/dms/image/C4E03AQFlTHLC0LevIg/profile-displayphoto-shrink_400_400/0/1627070558932?e=1632960000&v=beta&t=kpOsEv-ASL_3i0gHZYw0BNGHH1HESeNAjdZs2lfs1oY" alt="" />
+                            <img src="https://media-exp1.licdn.com/dms/image/C4E03AQEI86SwYf_KfQ/profile-displayphoto-shrink_400_400/0/1627483220125?e=1632960000&v=beta&t=IO8-x_k27Z1Bjo-JxowTuIWGM30Okqcb6Dt2ANV3BI8" alt="" />
                             <span>Name : Gagandeep Singh</span>
                             <span>Email id : gagands2497@gmail.com</span>
                             <span>Final Year student NIT-J@CSE</span>

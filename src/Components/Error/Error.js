@@ -8,7 +8,7 @@ const Error = (props) => {
 
     useEffect(() => {
         if (errors.length !== 0)
-            $("body > #root > *:not(.errors)").css("filter", "blur(20px)");
+            $("body > #root > *:not(.errors)").css("filter", "blur(40px)");
         else
             $('body').css("filter", "blur(0px)");
 

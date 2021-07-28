@@ -1,14 +1,18 @@
 #form{
     display: flex;
     justify-content: center;
+    background-color:#FEDC97;
 }
 #loginForm{
     display: flex;
     flex-direction: column;
+    background-color:#FEDC97;
     margin: 5rem;
     padding: 2rem;
     border-radius: 0.5rem;
-    border: 0.5rem solid rgb(46, 49, 75);
+    box-shadow: 0px 10px 38px 3px rgba(0,0,0,0.75);
+-webkit-box-shadow: 0px 10px 38px 3px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 10px 38px 3px rgba(0,0,0,0.75);
 }
 
 
@@ -16,21 +20,38 @@
     font-size: 1.5rem;
     padding: 1rem;
     margin : 1rem;
+    border: none;
     border-radius: 0.5rem;
+    outline: none;
+    border: 2px solid #FEDC97;
+    transition:0.2s;
+}
+
+#loginForm input:focus{
+    border: 2px solid #F4442E;
 }
 
 #loginForm input[type = "button"]{
-    background-color: rgb(46, 49, 75);
+    background-color: #7b0829;
     border-radius: 0.5rem;
     color: white;
     cursor: pointer;
+    transition:0.5s;
+    border: none;
 }
 
 
+#loginForm input[type = "button"]:hover{
+    box-shadow: 0px 10px 22px 0px rgba(0,0,0,0.75);
+-webkit-box-shadow: 0px 10px 22px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 10px 22px 0px rgba(0,0,0,0.75);
+    transform: translateY(-0.5rem);
+}
+
 #loginForm input[type = 'radio']{
     cursor: pointer;
-    height: 1.5rem;
-    width: 1.5rem;
+    height: 2rem;
+    width: 2rem;
 }
 
 #loginForm label{
