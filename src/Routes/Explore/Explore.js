@@ -4,6 +4,7 @@ import CourseCard from "../../Components/CourseCard/CourseCard";
 import Error from "../../Components/Error/Error";
 import Loading from "../../Components/Loading/Loading";
 import "./Explore.css";
+import Courses from "../../Components/Courses/Courses";
 
 const base_req_url = "https://server300.herokuapp.com";
 
@@ -70,11 +71,19 @@ const Explore = (e) => {
     // if (isLoading) {
     //     return <Loading />
     // } else {
+
+    const renderCourses = () => {
+        if (isLoading) {
+            return <Loading />
+        }
+        else {
+            return <Courses courses={courseData} />
+        }
+    }
+
     return (
         <React.Fragment>
             <Navbar></Navbar>
-            <Error errors={errors} />
-
             <div className="SearchCourse">
                 <input onChange={(e) => {
                     let v = (e.target.value).toLowerCase();
@@ -82,23 +91,12 @@ const Explore = (e) => {
                 }} className="SearchBar" type="text" placeholder="Search.." />
             </div>
             <div className="explore_base">
-                {
-                    courseData.map(function (course) {
-                        return <CourseCard CourseName={course.course_name} CourseTopic={course.course_topic} CourseDescription={course.description} />
-                    })
-                }
 
-<<<<<<< HEAD:src/Routes/Explore/Explore.js
+                {renderCourses()}
                 <div className="next_prev">
                     <button onClick={() => {
-                        if (pageNumber > 1)
-                            setPageNumber(pageNumber - 1)
-=======
-                    <div className="next_prev">
-                        <button onClick={() => {
-                            // if (pageNumber > 1)
-                                setPageNumber(pageNumber - 1)
->>>>>>> b5b57616c5e01c371f8220d19e195b25be74d476:src/Routes/Explore.js
+                        // if (pageNumber > 1)
+                        setPageNumber(pageNumber - 1)
 
                     }} className="direction" id="prev">Prev</button>
                     <h4>{pageNumber}</h4>

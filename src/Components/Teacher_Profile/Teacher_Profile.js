@@ -35,6 +35,13 @@ const Teacher_Profile = () => {
                 if (data.errors) {
                     setErrors(data.errors)
                     setisLoading(false);
+
+                    data.errors.forEach(error => {
+                        if (error.msg === "teacher not found") {
+                            window.location.href = '/explore';
+                        }
+                    })
+
                 } else {
                     setTeacherData(data)
                     setisLoading(false);
@@ -43,7 +50,7 @@ const Teacher_Profile = () => {
             .catch(err => {
                 if (!err.data) {
                     err.data = [{
-                        msg: err.message ? err.message : "Server is offline"
+                        msg: err.message ? err.message : "Server is offline Please refresh the page"
                     }]
                 }
                 setisLoading(false);
