@@ -22,7 +22,7 @@
 }
 
 #navbar a:hover{
-    color:#8DFFCD;
+    color:#000;
     transform: translateY(-0.5rem);
 }
 
@@ -32,5 +32,6 @@
 }
 
 #navbar button:hover{
+    color:#000;
     transform: translateY(-0.5rem);
 }

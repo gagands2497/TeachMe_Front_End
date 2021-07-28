@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Error from '../../Components/Error/Error';
+import Loading from '../../Components/Loading/Loading';
 import Navbar from "../../Components/Navbar/Navbar";
 import './SignUp.css';
 
@@ -92,12 +93,7 @@ const SignUp = () => {
         }
     }
     if (isLoading) {
-        return <h1 style={{
-            textAlign: 'center',
-            margin: "5rem",
-            fontSize: "3rem",
-            letterSpacing: "2px"
-        }}>Loading....</h1>
+        return <Loading/>
     } else {
         return (
             <React.Fragment>

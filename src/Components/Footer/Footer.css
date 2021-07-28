@@ -1,6 +1,6 @@
 #footer{
-    background-color: #05386B;
-    background: linear-gradient(270deg,#bfd3ee, #325e88, #0d3d6d);
+    background-color: #FEDC97;
+    
 }
 
 #footer h2{
@@ -27,6 +27,11 @@
     border: none;
     outline: none;
 }
+
+#turn-on-updates input:focus{
+    border: 2px solid #F4442E;
+}
+
 
 #social-media{
     display: flex;
