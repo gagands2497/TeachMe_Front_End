@@ -1,0 +1,32 @@
+.CourseByTeacherCard_main {
+    background-color: #FEDC97;
+    margin:1vw;
+    height:30vh;
+    border-radius:1em;
+    outline-color:#0F0E0E;
+    box-shadow: 5px 5px 2px grey;
+}
+
+.CourseByTeacherCard_main h3{
+    margin-bottom: 5px;
+}
+
+.CourseByTeacherCard_main a {
+  color: #0F0E0E;
+  background-color: #F4442E;
+  padding: 0.5em 1em;
+  border-radius: 0.5em;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+  margin-top: 20px;
+  transition: 0.5s;
+  transition:0.5s;
+  font-family: 'Roboto Slab', serif;
+}
+
+.CourseByTeacherCard_main a:hover{
+    transform: translateY(-0.2rem);
+    box-shadow: 0px 5px 10px 0px rgba(179, 36, 36, 0.75);
+    -webkit-box-shadow: 0px 10px 22px 0px rgba(192, 40, 40, 0.75);
+    -moz-box-shadow: 0px 10px 22px 0px rgba(184, 36, 36, 0.75);
+}

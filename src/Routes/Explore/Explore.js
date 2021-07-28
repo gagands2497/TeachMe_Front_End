@@ -88,17 +88,10 @@ const Explore = (e) => {
                     })
                 }
 
-<<<<<<< HEAD:src/Routes/Explore/Explore.js
                 <div className="next_prev">
                     <button onClick={() => {
                         if (pageNumber > 1)
                             setPageNumber(pageNumber - 1)
-=======
-                    <div className="next_prev">
-                        <button onClick={() => {
-                            // if (pageNumber > 1)
-                                setPageNumber(pageNumber - 1)
->>>>>>> b5b57616c5e01c371f8220d19e195b25be74d476:src/Routes/Explore.js
 
                     }} className="direction" id="prev">Prev</button>
                     <h4>{pageNumber}</h4>
