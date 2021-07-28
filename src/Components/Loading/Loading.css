@@ -1,0 +1,29 @@
+#LoadingImage{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#LoadingImage img{
+  border-radius: 100%;
+  z-index: 55;
+  animation: rotate 0.5s infinite ease-in-out;
+  cursor: pointer;
+  box-shadow: 0px 0px 8px 1px rgba(0,0,0,0.75);
+-webkit-box-shadow: 0px 0px 8px 1px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 0px 8px 1px rgba(0,0,0,0.75);
+}
+
+#LoadingImage img:hover{
+    animation: rotate 0.5s infinite ease-in-out;
+}
+
+@keyframes rotate{
+  0%{
+    transform: rotateZ(0deg);
+  }
+  100%{
+    transform: rotateZ(360deg);
+  }
+}

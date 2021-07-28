@@ -35,7 +35,7 @@ const Navbar = () => {
 
     return (
         <div id="navbar">
-            <a href="/"><span id="logo">TEACH ME</span></a>
+            <a href="/">TEACH ME</a>
             <a href="/explore">EXPLORE</a>
             <Dropdown
                 items={options}

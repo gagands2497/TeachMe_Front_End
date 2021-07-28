@@ -1,6 +1,7 @@
 * {
   padding: 0;
   margin: 0;
+  font-family: sans-serif;
   /* overflow-y: hidden; */
 }
 
@@ -115,14 +116,7 @@ a{
 
 
 
-@keyframes rotate{
-  0%{
-    transform: rotateZ(0deg);
-  }
-  100%{
-    transform: rotateZ(360deg);
-  }
-}
+
 
 
 /*-------------------------About Section Starts-----------------*/

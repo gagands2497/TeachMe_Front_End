@@ -1,37 +1,36 @@
 #navbar{
-    height: 10vh;
     width: 100vw;
-    top: 0;
+    margin: 0;
+    padding:1rem;
     z-index: 5;
-    background-color: #5CD895;
+    background-color: #F4442E;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    position: fixed;
+    /* position: fixed; */
 }
-#logo{
-    line-height: 10vh;
-    margin: 2vh;
-    font-size: 1.5rem;
-    padding:1vh;
-    color: #05386B;
-    border-radius: 0.5em;
-    font-family: sans-serif;
-    letter-spacing: 1.5px;
-    transition: 0.5s;
-    font-weight: 900;
-    cursor: pointer;
-}
+
 
 #navbar a{
     font-size: 1.5rem;
-    color: #05386B;
+    color: #FEDC97;
     font-family: sans-serif;
     letter-spacing: 1.5px;
     font-weight: 900;
+    padding:1rem;
+    transition: 0.5s;
 }
 
-#navbar span:hover{
-    background-color: #05386B;
-    color: #EDF5E1;
+#navbar a:hover{
+    color:#8DFFCD;
+    transform: translateY(-0.5rem);
+}
+
+#navbar button{
+    color:#FEDC97;
+    padding:1rem;
+}
+
+#navbar button:hover{
+    transform: translateY(-0.5rem);
 }

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Navbar from "../Components/Navbar/Navbar";
 import CourseCard from "../Components/CourseCard/CourseCard";
 import Error from "../Components/Error/Error";
+import Loading from "../Components/Loading/Loading";
 
 const base_req_url = "https://server300.herokuapp.com";
 
@@ -63,12 +64,7 @@ const Explore = () => {
     }, [pageNumber, search]);
 
     if (isLoading) {
-        return <h1 style={{
-            textAlign: 'center',
-            margin: "5rem",
-            fontSize: "3rem",
-            letterSpacing: "2px"
-        }}>Loading....</h1>
+        return <Loading/>
     } else {
         return (
             <React.Fragment>
