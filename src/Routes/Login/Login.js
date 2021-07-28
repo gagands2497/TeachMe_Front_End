@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './Login.css';
 import Error from "../../Components/Error/Error"
 import Navbar from "../../Components/Navbar/Navbar";
+import Loading from '../../Components/Loading/Loading';
 const base_req_url = "https://server300.herokuapp.com";
 
 
@@ -68,12 +69,7 @@ const Login = () => {
 
     }
     if (isLoading) {
-        return <h1 style={{
-            textAlign: 'center',
-            margin: "5rem",
-            fontSize: "3rem",
-            letterSpacing: "2px"
-        }}>Loading....</h1>
+        return <Loading/>
     } else
         return (
             <React.Fragment>
