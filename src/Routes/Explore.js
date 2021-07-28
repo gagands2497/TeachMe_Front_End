@@ -82,7 +82,7 @@ const Explore = () => {
 
                     <div className="next_prev">
                         <button onClick={() => {
-                            if (pageNumber > 1)
+                            // if (pageNumber > 1)
                                 setPageNumber(pageNumber - 1)
 
                         }} className="direction" id="prev">Prev</button>

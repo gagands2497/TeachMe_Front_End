@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap');
+#teacher_profile {
+    margin: 4rem;
+    padding: 4rem;
+    background-color: #F4442E;
+    border-radius: 1rem;
+    display:flex;
+    justify-content: space-around;
+}
+#teacher_profile img{
+    height: 10rem;
+    width: 10rem;
+}
+
+#teacher_profile h1,h3{
+    padding:1rem;
+    color: #0F0E0E;
+    font-family: 'Roboto Slab', serif;
+}
+
+#teacher_profile h3{
+    line-height:2;
+    font-size:1.2rem;
+    letter-spacing:2px;
+}
+
+#about_teacher {
+    display: flex;
+    flex-direction:column;
+    margin: 4rem;
+    width: 40%;
+    color: #0F0E0E;
+}
+
+#teacher_options {
+    padding: 2rem;
+    margin: 4rem;
+    border-radius: 1rem;
+    background-color: #F4442E;
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+}
+
+#teacher_options div{
+    display: flex;
+    align-items: center;
+}
+
+#teacher_options input[type = "radio"]{
+    height:2rem;
+    width:2rem;
+    cursor: pointer;
+}
