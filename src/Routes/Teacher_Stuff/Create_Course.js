@@ -17,7 +17,7 @@ const Create_Course = () => {
 
         const data = {
             course_name: form.course_name.value,
-            course_topic: form.course_topic.value,
+            course_topic: (form.course_topic.value).toLowerCase(),
             description: form.description.value,
             storage_link: form.storage_link.value
         }

@@ -4,5 +4,5 @@ const LIveSessionByTeacher = () => {
         <h1>LIveSessionByTeacher</h1>
     );
 }
- 
+
 export default LIveSessionByTeacher;

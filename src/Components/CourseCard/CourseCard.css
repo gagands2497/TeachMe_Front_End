@@ -1,14 +1,15 @@
 .CourseCard {
-  background-color: aliceblue;
+  background-color: #FEDC97;
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
   align-items: center;
   padding: 2em;
   border-style: inset;
+  border-radius: 1rem;
   border-width: 3px;
-  margin-bottom: 8px;
-  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+  margin-bottom: 20px;
+  box-shadow: 5px 5px 10px 0px rgba(189, 134, 17, 0.75);
   height: 50vh;
 }
 
@@ -37,14 +38,24 @@
 }
 
 #about a {
-  color: rgba(6, 21, 34, 0.712);
-  background-color: pink;
+  color: #0F0E0E;
+  background-color: #F4442E;
   padding: 0.5em 1em;
   border-radius: 0.5em;
+  font-weight: bold;
   float: right;
   letter-spacing: 1.5px;
   margin-top: 2em;
   transition: 0.5s;
+  transition:0.5s;
+    font-family: 'Roboto Slab', serif;
+}
+
+#about a:hover{
+    transform: translateY(-0.2rem);
+    box-shadow: 0px 5px 10px 0px rgba(179, 36, 36, 0.75);
+    -webkit-box-shadow: 0px 10px 22px 0px rgba(192, 40, 40, 0.75);
+    -moz-box-shadow: 0px 10px 22px 0px rgba(184, 36, 36, 0.75);
 }
 
 /* #about a:hover::before {
@@ -58,13 +69,23 @@
 
 
 #information a {
-  color: rgba(6, 21, 34, 0.712);
-  background-color: pink;
+  color: #0F0E0E;
+  background-color: #F4442E;
   padding: 0.5em 1em;
   border-radius: 0.5em;
+  font-weight: bold;
   letter-spacing: 1.5px;
   transition: 0.5s;
   margin-top:2vh;
+  transition:0.5s;
+  font-family: 'Roboto Slab', serif;
+}
+
+#information a:hover{
+    transform: translateY(-0.2rem);
+    box-shadow: 0px 5px 10px 0px rgba(179, 36, 36, 0.75);
+    -webkit-box-shadow: 0px 10px 22px 0px rgba(192, 40, 40, 0.75);
+    -moz-box-shadow: 0px 10px 22px 0px rgba(184, 36, 36, 0.75);
 }
 
 /* #information a:hover::before {

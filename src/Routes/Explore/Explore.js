@@ -1,21 +1,26 @@
 import React, { useState, useEffect } from "react";
-import Navbar from "../Components/Navbar/Navbar";
-import CourseCard from "../Components/CourseCard/CourseCard";
-import Error from "../Components/Error/Error";
-import Loading from "../Components/Loading/Loading";
+import Navbar from "../../Components/Navbar/Navbar";
+import CourseCard from "../../Components/CourseCard/CourseCard";
+import Error from "../../Components/Error/Error";
+import Loading from "../../Components/Loading/Loading";
+import "./Explore.css";
 
 const base_req_url = "https://server300.herokuapp.com";
 
-const Explore = () => {
+const Explore = (e) => {
+
     const [search, setSearch] = useState("");
     const [courseData, setcourseData] = useState([]);
     const [pageNumber, setPageNumber] = useState(1);
     const [errors, seterrors] = useState([]);
     const [isLoading, setisLoading] = useState(false);
+
+
     const handler = (e) => {
 
         seterrors([]);
         setisLoading(true);
+
         const url = `${base_req_url}/course/search_courses?course_topic=${search}&pageNumber=${pageNumber}`;
         console.log(url)
 
@@ -49,7 +54,6 @@ const Explore = () => {
                 setisLoading(false);
                 console.log(err);
             })
-
     }
     useEffect(() => {
         handler();
@@ -59,40 +63,44 @@ const Explore = () => {
         }
         else {
             document.getElementById("prev").disabled = false;
-            document.getElementById("prev").style.backgroundColor = "#5CD895";
+            document.getElementById("prev").style.backgroundColor = "#0F0E0E";
         }
     }, [pageNumber, search]);
 
-    if (isLoading) {
-        return <Loading/>
-    } else {
-        return (
-            <React.Fragment>
-                <Navbar></Navbar>
-                <Error errors={errors} />
-                <div className="SearchCourse">
-                    <input onChange={(e) => { setSearch(e.target.value) }} className="SearchBar" type="text" placeholder="Search.." />
-                </div>
-                <div className="explore_base">
-                    {
-                        courseData.map(function (course) {
-                            return <CourseCard CourseName={course.course_name} CourseTopic={course.course_topic} CourseDescription={course.description} />
-                        })
-                    }
+    // if (isLoading) {
+    //     return <Loading />
+    // } else {
+    return (
+        <React.Fragment>
+            <Navbar></Navbar>
+            <Error errors={errors} />
 
-                    <div className="next_prev">
-                        <button onClick={() => {
-                            if (pageNumber > 1)
-                                setPageNumber(pageNumber - 1)
+            <div className="SearchCourse">
+                <input onChange={(e) => {
+                    let v = (e.target.value).toLowerCase();
+                    setSearch(v);
+                }} className="SearchBar" type="text" placeholder="Search.." />
+            </div>
+            <div className="explore_base">
+                {
+                    courseData.map(function (course) {
+                        return <CourseCard CourseName={course.course_name} CourseTopic={course.course_topic} CourseDescription={course.description} />
+                    })
+                }
 
-                        }} className="direction" id="prev">Prev</button>
-                        <h4>{pageNumber}</h4>
-                        <button onClick={() => { setPageNumber(pageNumber + 1) }} className="direction" name="next">Next</button>
-                    </div>
+                <div className="next_prev">
+                    <button onClick={() => {
+                        if (pageNumber > 1)
+                            setPageNumber(pageNumber - 1)
+
+                    }} className="direction" id="prev">Prev</button>
+                    <h4>{pageNumber}</h4>
+                    <button onClick={() => { setPageNumber(pageNumber + 1) }} className="direction" name="next">Next</button>
                 </div>
-            </React.Fragment>
-        );
-    }
+            </div>
+        </React.Fragment>
+    );
 }
+// }
 
 export default Explore;

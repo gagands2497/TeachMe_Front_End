@@ -634,31 +634,6 @@ h1.first-name {
 }
 
 
-/* Explore Section Started  */
-
-.explore_base{
-  justify-content: center;
-  background-color: #FDFEFF;
-  margin:5vh;
-}
-
-.SearchCourse{
-  margin-top: 60px;
-  text-align: center;
-}
-
-.SearchBar{
-  font-family: "Montserrat", sans-serif;
-  height:8vh;
-  width: 40%;
-  border-style: outset;
-  border-width: 4px;
-  border-color: #1a7e76;
-  color: #1a7e76;
-  text-align: center;
-  font-size: 1.5rem;
-}
-
 
 
 /* Login Section Starts */
@@ -703,20 +678,3 @@ h1.first-name {
     transition: 0.5s;
 }
 
-
-/* Explore.js */
-
-.next_prev{
-  display: flex;
-  align-items: center;
-  justify-content:center;
-  width:100%;
-}
-
-.direction{
-  margin:30px;
-  background-color:#5CD895;
-  height: 5vh;
-  width: 10vh;
-  border-radius:10px;
-}

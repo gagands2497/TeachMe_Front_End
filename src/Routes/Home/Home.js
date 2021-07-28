@@ -47,7 +47,7 @@ const Home = (props) => {
 
                             <img src="https://media-exp1.licdn.com/dms/image/C5603AQFu4g478brDCg/profile-displayphoto-shrink_400_400/0/1624248625144?e=1632960000&v=beta&t=kNrtxxbnBbbXlM-BT1DJmyOpo88ouMmx31fFsgLDd3k" alt="" />
                             <span>Name : Navjot Singh</span>
-                            <span>Email id : gagands2497@gmail.com</span>
+                            <span>Email id : navjotsingh19353@gmail.com</span>
                             <span>Final Year student NIT-J@CSE</span>
                             <span >Skills :-</span>
                             <ul>
