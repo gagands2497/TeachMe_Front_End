@@ -1,14 +1,18 @@
 #form{
     display: flex;
     justify-content: center;
+    background-color:#FEDC97;
 }
 #signUpform{
     display: flex;
     flex-direction: column;
     margin: 5rem;
     padding: 2rem;
+    background-color:#FEDC97;
     border-radius: 0.5rem;
-    border: 0.5rem solid rgb(46, 49, 75);
+    box-shadow: 0px 10px 38px 3px rgba(0,0,0,0.75);
+-webkit-box-shadow: 0px 10px 38px 3px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 10px 38px 3px rgba(0,0,0,0.75);
 }
 
 
@@ -17,6 +21,13 @@
     padding: 1rem;
     margin : 1rem;
     border-radius: 0.5rem;
+    outline: none;
+    border: 2px solid #FEDC97;
+    transition:0.2s;
+}
+
+#signUpform input:focus{
+    border: 2px solid #F4442E;
 }
 
 #signUpform label{
@@ -25,15 +36,23 @@
 
 #signUpform input[type = 'radio']{
     cursor: pointer;
-    height: 1.5rem;
-    width: 1.5rem;
+    height: 2rem;
+    width: 2rem;
 }
 
 #signUpform input[type = "button"]{
-    background-color: rgb(46, 49, 75);
+    background-color: #522B47;
     border-radius: 0.5rem;
+    border:none;
     color: white;
     cursor: pointer;
+    transition: 0.5s;
+}
+#signUpform input[type = "button"]:hover{
+    transform: translateY(-0.5rem);
+    box-shadow: 0px 10px 22px 0px rgba(0,0,0,0.75);
+-webkit-box-shadow: 0px 10px 22px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 10px 22px 0px rgba(0,0,0,0.75);
 }
 
 #radioOptions{
@@ -74,7 +93,10 @@
     padding: 1rem;
     margin : 1rem;
     border-radius: 0.5rem;
-
+    outline: none;
+    border: 2px solid #FEDC97;
 }
 
-
+#description:focus{
+    border: 2px solid #F4442E;    
+}

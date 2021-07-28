@@ -11,6 +11,7 @@ import SignUp from './Routes/SignUp/SignUp';
 import Personal_Profile from './Routes/Personal_Profile/Personal_Profile';
 import Create_Course from './Routes/Teacher_Stuff/Create_Course';
 import Update_Profile from './Routes/Teacher_Stuff/Update_Profile';
+import Teacher_Profile from './Components/Teacher_Profile/Teacher_Profile';
 
 // ---------------------------------------------
 const App = () => {
@@ -19,6 +20,9 @@ const App = () => {
             <Switch>
                 <Route path='/' exact>
                     <Home></Home>
+                </Route>
+                <Route path='/teacher/view_profile'>
+                    <Teacher_Profile></Teacher_Profile>
                 </Route>
                 <Route path='/register'>
                     <SignUp />
