@@ -5,6 +5,8 @@ import Loading from '../Loading/Loading';
 import base_req_url from '../../base_req_url';
 import Error from '../Error/Error';
 import Navbar from '../Navbar/Navbar';
+import CourseByTeacher from '../CourseByTeacher/CourseByTeacher';
+
 import $ from 'jquery';
 
 
@@ -61,7 +63,7 @@ const Teacher_Profile = () => {
 
     const renderOptions = () => {
         if (OptionValue === "COURSE") {
-            return <h1>COURSES</h1>
+            return <CourseByTeacher />
         } else if (OptionValue === "SESSION") {
             return <h1>LIVE SESSIONS</h1>
         }
