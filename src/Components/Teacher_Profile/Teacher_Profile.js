@@ -63,7 +63,7 @@ const Teacher_Profile = () => {
 
     const renderOptions = () => {
         if (OptionValue === "COURSE") {
-            return <CourseByTeacher />
+            return <CourseByTeacher email_id={TeacherData.email_id} />
         } else if (OptionValue === "SESSION") {
             return <h1>LIVE SESSIONS</h1>
         }

@@ -91,7 +91,7 @@ const Explore = (e) => {
                 }} className="SearchBar" type="text" placeholder="Search.." />
             </div>
             <div className="explore_base">
-
+                {renderCourses()}
                 <div className="next_prev">
                     <button onClick={() => {
                         if (pageNumber > 1)

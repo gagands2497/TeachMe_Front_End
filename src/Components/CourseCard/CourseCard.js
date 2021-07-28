@@ -9,7 +9,7 @@ const ExploreCard = (props) => {
         <div className="CourseCard">
             <div id="information">
                 <img src={profileImage} alt="" />
-                <a href="">View Profile</a>
+                <a href= {`/teacher/view_profile?email_id=${props.email_id}`}>View Profile</a>
             </div>
             <div id="about">
                 <h1 id="name">{props.CourseName}</h1>

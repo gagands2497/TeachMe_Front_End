@@ -1,23 +1,66 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './CourseByTeacher.css';
 import CourseByTeacherCard from '../CourseByTeacherCard/CourseByTeacherCard';
+import base_req_url from '../../base_req_url'
+import Error from '../Error/Error';
+import Loading from '../Loading/Loading';
 
-const CourseByTeacher = () => {
+const CourseByTeacher = ({ email_id }) => {
+    const [isLoading, setisLoading] = useState(false);
+    const [errors, seterrors] = useState([])
+    const [courses, setcourses] = useState([])
+    useEffect(() => {
+        setisLoading(true)
+        const options = {
+            method: 'GET',
+            headers: {
+                "Content-Type": "application/json"
+            }
+        }
+
+        const url = `${base_req_url}/course/course_by_teacher/?email_id=${email_id}`;
+
+        fetch(url, options)
+            .then(response => {
+                return response.json();
+            })
+            .then(data => {
+                setisLoading(false);
+                if (data.errors) {
+                    seterrors(data.errors)
+                } else {
+                    setcourses(data.Courses)
+                }
+            })
+            .catch(err => {
+                const error = new Error("Server is offline");
+                error.data = [{
+                    msg: err.message ? err.message : "Server is offline"
+                }]
+                seterrors([err]);
+            })
+    }, [])
+
+    const renderErrors = () => {
+        if (errors.length === 0) {
+            return <div></div>
+        } else {
+            return <Error errors={errors} />
+        }
+    }
     return (
         <React.Fragment>
+            {renderErrors()}
+            {isLoading && <Loading />}
             <div className="CourseByTeacher_main">
-                <CourseByTeacherCard course_name="Web Developmeny Bootcamp" course_topic="React Js" link="https://www.youtube.com/watch?v=3-KVVjo-0DI" />
-                <CourseByTeacherCard course_name="Web Developmeny Bootcamp" course_topic="React Js" link="https://www.youtube.com/watch?v=3-KVVjo-0DI" />
-                <CourseByTeacherCard course_name="Web Developmeny Bootcamp" course_topic="React Js" link="https://www.youtube.com/watch?v=3-KVVjo-0DI" />
-                <CourseByTeacherCard course_name="Web Developmeny Bootcamp" course_topic="React Js" link="https://www.youtube.com/watch?v=3-KVVjo-0DI" />
-                <CourseByTeacherCard course_name="Web Developmeny Bootcamp" course_topic="React Js" link="https://www.youtube.com/watch?v=3-KVVjo-0DI" />
-                <CourseByTeacherCard course_name="Web Developmeny Bootcamp" course_topic="React Js" link="https://www.youtube.com/watch?v=3-KVVjo-0DI" />
-                <CourseByTeacherCard course_name="Web Developmeny Bootcamp" course_topic="React Js" link="https://www.youtube.com/watch?v=3-KVVjo-0DI" />
-                <CourseByTeacherCard course_name="Web Developmeny Bootcamp" course_topic="React Js" link="https://www.youtube.com/watch?v=3-KVVjo-0DI" />
-                <CourseByTeacherCard course_name="Web Developmeny Bootcamp" course_topic="React Js" link="https://www.youtube.com/watch?v=3-KVVjo-0DI" />
-                <CourseByTeacherCard course_name="Web Developmeny Bootcamp" course_topic="React Js" link="https://www.youtube.com/watch?v=3-KVVjo-0DI" />
-                <CourseByTeacherCard course_name="Web Developmeny Bootcamp" course_topic="React Js" link="https://www.youtube.com/watch?v=3-KVVjo-0DI" />
-                <CourseByTeacherCard course_name="Web Developmeny Bootcamp" course_topic="React Js" link="https://www.youtube.com/watch?v=3-KVVjo-0DI" />
+                {
+                    courses.map(course => {
+                        return <CourseByTeacherCard
+                            course_name={course.course_name}
+                            course_topic={course.course_topic}
+                            link={course.storage_link} />
+                    })
+                }
             </div>
         </React.Fragment>
     )
@@ -32,64 +75,3 @@ export default CourseByTeacher;
 
 
 
-
-// import { useEffect } from 'react';
-// import base_url from '../../../../base_url';
-// import CourseCard from '../CourseCard/CourseCard';
-// import './CourseByTeacher.css';
-
-
-// const CourseByTeacher = (props) => {
-//     const email_id = props.email_id;
-//     const [Courses, setCourses] = useState([]);
-//     const [errors, seterrors] = useState([]);
-
-//     useState(() => {
-//         const url = `${base_url}/course/course_by_teacher?email_id=${email_id}`;
-//         const options = {
-//             method: 'GET',
-//             headers: {
-//                 "Content-Type": "application/json"
-//             }
-//         }
-
-//         fetch(url, options)
-//             .then(response => {
-//                 return response.json();
-//             })
-//             .then(data => {
-//                 if (!data.errors) {
-//                     setCourses(data.Courses);
-//                 } else {
-//                     seterrors(data.errors);
-//                 }
-//             })
-//             .catch(err => {
-//                 err.data = [{
-//                     msg: err.message ? err.message : "Server is offline"
-//                 }]
-//                 seterrors([err]);
-//             })
-//     }, []);
-
-//     const renderCourses = () => {
-//         return Courses.map(Course => {
-//             <CourseCard
-//                 CourseName={Course.course_name}
-//                 CourseTopic={Course.course_topic}
-//                 CourseDescription={Course.description}
-//             />
-//         })
-//     }
-
-
-//     return (
-//         <div id="course_by_teacher">
-//             {/* {renderCourses()} */}
-//             Holla
-//         </div>
-
-//     );
-// }
-
-// export default CourseByTeacher;
